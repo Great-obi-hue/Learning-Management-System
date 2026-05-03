@@ -1,0 +1,299 @@
+<!-- CategoryPage.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Courses | Byway</title>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="CategoryPage.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="Images/CategoryPage Imgs/logo.png" alt="Byway Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-icon-fallback" style="display: none;">B</div>
+                <span>Byway</span>
+            </div>
+
+            <a href="#" class="nav-link">Categories</a>
+        </div>
+
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search courses">
+        </div>
+
+        <div class="nav-right">
+            <a href="#" class="teach-link">Teach on Byway</a>
+            <i class="far fa-heart"></i>
+            <i class="fas fa-shopping-cart"></i>
+            <i class="far fa-bell"></i>
+            <div class="profile-avatar">J</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="category-page">
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Design Courses</h1>
+            <p>All Development Courses</p>
+        </section>
+
+        <!-- Toolbar -->
+        <section class="toolbar">
+            <button class="filter-btn">
+                <i class="fas fa-sliders-h"></i>
+                Filter
+            </button>
+
+            <div class="sort-wrapper">
+                <label for="sortCourses">Sort By</label>
+                <select id="sortCourses">
+                    <option value="relevance">Relevance</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Highest Rated</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Content Layout -->
+        <section class="content-layout">
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+
+                <div class="filter-group">
+                    <div class="filter-header">
+                        <h3>Rating</h3>
+                        <i class="fas fa-chevron-up"></i>
+                    </div>
+
+                    <label><input type="radio" name="rating" value="5"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></label>
+                    <label><input type="radio" name="rating" value="4"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i></label>
+                    <label><input type="radio" name="rating" value="3"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></label>
+                    <label><input type="radio" name="rating" value="2"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></label>
+                    <label><input type="radio" name="rating" value="1"> <i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></label>
+                </div>
+
+                <div class="filter-group">
+                    <div class="filter-header">
+                        <h3>Number of Chapters</h3>
+                        <i class="fas fa-chevron-up"></i>
+                    </div>
+
+                    <label><input type="checkbox"> 1-10</label>
+                    <label><input type="checkbox"> 10-15</label>
+                    <label><input type="checkbox" checked> 15-20</label>
+                    <label><input type="checkbox"> 20-25</label>
+
+                    <a href="#" class="see-more">See More</a>
+                </div>
+
+                <div class="filter-group">
+                    <div class="filter-header">
+                        <h3>Price</h3>
+                        <i class="fas fa-chevron-up"></i>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <div class="filter-header">
+                        <h3>Category</h3>
+                        <i class="fas fa-chevron-up"></i>
+                    </div>
+                </div>
+
+            </aside>
+
+            <!-- Courses Grid -->
+            <section class="courses-section">
+                <div class="courses-grid" id="coursesGrid">
+                    <!-- JavaScript renders 3x3 course cards here -->
+                </div>
+
+                <!-- Numbered Pagination: < 1 2 3 4 > -->
+                <div class="numbered-pagination" id="numberedPagination">
+                    <!-- JavaScript renders pagination buttons here -->
+                </div>
+            </section>
+
+        </section>
+
+        <!-- ========== POPULAR MENTORS SECTION ========== -->
+        <section class="popular-mentors-section">
+            <div class="section-title">
+                <h2>Popular Mentors</h2>
+            </div>
+
+            <div class="mentors-grid" id="mentorsGrid">
+                <!-- JavaScript renders mentor cards here -->
+            </div>
+        </section>
+
+        <!-- Carousel Section -->
+        <section class="carousel-section">
+            <div class="section-title">
+                <h2>Featured Courses</h2>
+            </div>
+
+            <div class="custom-carousel">
+                <button class="carousel-arrow prev-arrow" id="carouselPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel-track-container-custom">
+                    <div class="carousel-track-custom" id="carouselTrackCustom">
+                        <!-- JavaScript renders carousel cards here -->
+                    </div>
+                </div>
+
+                <button class="carousel-arrow next-arrow" id="carouselNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Carousel Pagination Dots -->
+            <div class="carousel-dots" id="carouselDots"></div>
+        </section>
+
+        <!-- Reserved Space For Future Sections -->
+        <section id="future-content"></section>
+
+    </main>
+
+    <!-- ========== FOOTER SECTION ========== -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Trusted Companies Logos Section -->
+            <div class="trusted-companies">
+                <p class="trusted-text">Trusted by industry-leading companies</p>
+                <div class="companies-logos">
+                    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+                        <img src="Images/Trusted Companies Imgs/google-logo.png" alt="Google" class="company-logo" onerror="this.src='https://placehold.co/100x40/e2e8f0/64748b?text=Google'">
+                    </a>
+                    <a href="https://www.microsoft.com" target="_blank" rel="noopener noreferrer">
+                        <img src="Images/Trusted Companies Imgs/microsoft-logo.png" alt="Microsoft" class="company-logo" onerror="this.src='https://placehold.co/100x40/e2e8f0/64748b?text=Microsoft'">
+                    </a>
+                    <a href="https://www.netflix.com" target="_blank" rel="noopener noreferrer">
+                        <img src="Images/Trusted Companies Imgs/netflix-logo.png" alt="Netflix" class="company-logo" onerror="this.src='https://placehold.co/100x40/e2e8f0/64748b?text=Netflix'">
+                    </a>
+                    <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer">
+                        <img src="Images/Trusted Companies Imgs/amazon-logo.png" alt="Amazon" class="company-logo" onerror="this.src='https://placehold.co/100x40/e2e8f0/64748b?text=Amazon'">
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                        <img src="Images/Trusted Companies Imgs/meta-logo.jpg" alt="Meta" class="company-logo" onerror="this.src='https://placehold.co/100x40/e2e8f0/64748b?text=Meta'">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Columns -->
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Description -->
+                <div class="footer-column footer-brand">
+                    <div class="footer-logo">
+                        <img src="Images/CategoryPage Imgs/logo.png" alt="Byway Logo" class="footer-logo-image" onerror="this.src='https://placehold.co/40x40/2563eb/white?text=B'">
+                        <span>Byway</span>
+                    </div>
+                    <p class="footer-description">
+                        Empowering learners through accessible and engaging online education.
+                        Byway is a leading online learning platform dedicated to providing high-quality,
+                        flexible, and affordable educational experiences.
+                    </p>
+                </div>
+
+                <!-- Column 2: Get Help -->
+                <div class="footer-column">
+                    <h4>Get Help</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Latest Articles</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Programs -->
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#">Art & Design</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">IT & Software</a></li>
+                        <li><a href="#">Languages</a></li>
+                        <li><a href="#">Programming</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Us with Social Media Images -->
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <div class="contact-us-text">
+                        <p>Address: 123 Main Street, Anytown, CA 12345</p>
+                        <p>Tel: +(123) 456-7890</p>
+                        <p>Mail: bywayedu@webkul.in</p>
+                    </div>
+                    
+                    <!-- Social Media Images (Local Files) -->
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+                            <img src="Images/CategoryPage Imgs/fb img.png" alt="Facebook" class="social-icon-img" onerror="this.src='https://placehold.co/32x32/2563eb/white?text=f'">
+                        </a>
+                        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+                            <img src="Images/CategoryPage Imgs/g hub img.png" alt="GitHub" class="social-icon-img" onerror="this.src='https://placehold.co/32x32/2563eb/white?text=git'">
+                        </a>
+                        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+                            <img src="Images/CategoryPage Imgs/g img.png" alt="Google" class="social-icon-img" onerror="this.src='https://placehold.co/32x32/2563eb/white?text=g'">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+                            <img src="Images/CategoryPage Imgs/x img.png" alt="X (Twitter)" class="social-icon-img" onerror="this.src='https://placehold.co/32x32/2563eb/white?text=x'">
+                        </a>
+                        <a href="https://www.microsoft.com" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+                            <img src="Images/CategoryPage Imgs/mic img.png" alt="Microsoft" class="social-icon-img" onerror="this.src='https://placehold.co/32x32/2563eb/white?text=m'">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Byway. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript File -->
+    <script src="CategoryPage.js"></script>
+
+    <!-- Logo fallback script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoImg = document.querySelector('.logo-image');
+            const fallback = document.querySelector('.logo-icon-fallback');
+            if (logoImg && logoImg.complete && logoImg.naturalWidth === 0) {
+                logoImg.style.display = 'none';
+                if (fallback) fallback.style.display = 'flex';
+            } else if (logoImg) {
+                logoImg.addEventListener('error', function() {
+                    logoImg.style.display = 'none';
+                    if (fallback) fallback.style.display = 'flex';
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
