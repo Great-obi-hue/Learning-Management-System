@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction to User Experience Design – Byway</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="OrderComplete.css" />
+</head>
+<body>
+
+  <!-- STICKY HEADER -->
+  <!-- STICKY HEADER -->
+<header class="site-header" id="siteHeader">
+
+  <div class="header-inner">
+
+    <!-- LEFT SIDE -->
+    <a href="#" class="logo">
+
+      <div class="custom-logo"></div>
+
+      <span class="logo-text">Byway</span>
+    </a>
+
+    <!-- RIGHT SIDE -->
+    <div class="right-section">
+      <span class="star">★</span>
+      <span>Provide Rating</span>
+    </div>
+
+    <!-- HAMBURGER -->
+    <button class="hamburger" id="hamburgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+</header>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#">Categories</a>
+    <a href="#">Instructor</a>
+    <a href="#">My Learning</a>
+    <a href="#">Search</a>
+  </div>
+
+  <main class="main-layout">
+
+    <!-- LEFT: COURSE CONTENT -->
+    <div class="course-main">
+      <!-- COURSE TITLE -->
+      <section class="course-header-info">
+        <h1 class="course-title">Introduction to User Experience Design</h1>
+      </section>
+
+      <!-- HERO VIDEO -->
+      <section class="video-section">
+        <div class="video-wrapper">
+          <img src="Images/Frame.png" alt="Course intro" class="video-thumb" />
+          <button class="play-btn" aria-label="Play video">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+        </div>
+      </section>
+
+      
+
+      <!-- TABS -->
+      <nav class="course-tabs" id="courseTabs">
+        <button class="tab-btn active" data-tab="details">Details</button>
+        <button class="tab-btn" data-tab="instructor">Instructor</button>
+        <button class="tab-btn" data-tab="courses">Courses</button>
+        <button class="tab-btn" data-tab="reviews">Reviews</button>
+      </nav>
+
+      <!-- TAB: DETAILS -->
+      <div class="tab-content active" id="tab-details">
+        <section class="section-block">
+          <h2>Course Overview</h2>
+          <p>Embark on a transformative journey into the dynamic world of User Experience (UX) Design with our comprehensive course, "Introduction to User-Centered Design." This course is meticulously crafted to provide you with a foundational understanding of UX principles, methodologies, and tools that drive exceptional digital world.</p>
+
+          <h3 class="subsection-title">Key Learning Objectives</h3>
+          <ul class="objectives-list">
+            <li>Gain a clear understanding of what User Experience (UX) Design entails and its importance in today's digital world.</li>
+            <li>Explore the fundamental principles of user-centered design and how to apply them to create intuitive and user-friendly interfaces.</li>
+            <li>Learn about the various elements that contribute to a positive user experience, including information architecture, interaction design, and visual design.</li>
+          </ul>
+        </section>
+
+        <section class="section-block instructor-section">
+          <h2>Instructor</h2>
+          <div class="instructor-card">
+            <img src="C:\Users\Mmeso\Documents\Learning-Management-System\Instructor.jpg.png" alt="Ronald Richards" class="instructor-avatar" />
+            <div class="instructor-info">
+              <h3 class="instructor-name">Ronald Richards</h3>
+              <p class="instructor-role">UX/UI Designer</p>
+              <div class="instructor-stats">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg> 4.8 Instructor Rating</span>
+                <span>&#128100; 500 Reviews</span>
+                <span>&#127891; 900 Students</span>
+                <span>&#127908; 31 Courses</span>
+              </div>
+              <p class="instructor-bio">With a decade of industry experience, Ronald brings a wealth of practical knowledge to the classroom. He has played a pivotal role in designing user-centric interfaces for renowned tech companies, ensuring seamless and engaging user experiences.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- TAB: INSTRUCTOR -->
+      <div class="tab-content" id="tab-instructor">
+        <section class="section-block">
+          <h2>About the Instructor</h2>
+          <div class="instructor-card">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Ronald Richards" class="instructor-avatar" />
+            <div class="instructor-info">
+              <h3 class="instructor-name">Ronald Richards</h3>
+              <p class="instructor-role">Senior UX/UI Designer & Educator</p>
+              <div class="instructor-stats">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg> 4.8 Rating</span>
+                <span>&#128100; 500 Reviews</span>
+                <span>&#127891; 900 Students</span>
+                <span>&#127908; 31 Courses</span>
+              </div>
+              <p class="instructor-bio">Ronald Richards is a seasoned UX/UI Designer with over 10 years of experience creating exceptional digital experiences for Fortune 500 companies. His teaching philosophy centers on practical, hands-on learning that bridges the gap between theory and real-world application. With expertise in design systems, usability testing, and interaction design, Ronald's courses have helped thousands of students launch successful careers in UX design.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- TAB: COURSES -->
+      <div class="tab-content" id="tab-courses">
+        <section class="section-block">
+          <h2>More Courses by Ronald Richards</h2>
+          <p class="muted">All courses taught by this instructor are available below.</p>
+        </section>
+      </div>
+
+      <!-- TAB: REVIEWS -->
+      <div class="tab-content" id="tab-reviews">
+        <section class="section-block">
+          <h2>Learner Reviews</h2>
+          <div class="reviews-summary">
+            <div class="big-rating">4.8</div>
+            <div class="rating-bars">
+              <div class="rating-row"><span>5 &#9733;</span><div class="bar-bg"><div class="bar-fill" style="width:72%"></div></div><span>72%</span></div>
+              <div class="rating-row"><span>4 &#9733;</span><div class="bar-bg"><div class="bar-fill" style="width:16%"></div></div><span>16%</span></div>
+              <div class="rating-row"><span>3 &#9733;</span><div class="bar-bg"><div class="bar-fill" style="width:8%"></div></div><span>8%</span></div>
+              <div class="rating-row"><span>2 &#9733;</span><div class="bar-bg"><div class="bar-fill" style="width:3%"></div></div><span>3%</span></div>
+              <div class="rating-row"><span>1 &#9733;</span><div class="bar-bg"><div class="bar-fill" style="width:1%"></div></div><span>1%</span></div>
+            </div>
+          </div>
+          <div class="reviews-list">
+            <div class="review-card">
+              <div class="reviewer-header">
+                <div class="reviewer-avatar" style="background:#fde68a;color:#92400e;">MD</div>
+                <div>
+                  <strong>Mark Doe</strong>
+                  <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <span class="review-date">Reviewed on 23rd March, 2024</span>
+              </div>
+              <p>I was totally apprehensive during his prior design experience. But the instructor, John Doe, did an amazing job of breaking down complex concepts in a really digestible manner. The video lectures are engaging, and the real-world examples really helped solidify my understanding.</p>
+            </div>
+            <div class="review-card">
+              <div class="reviewer-header">
+                <div class="reviewer-avatar" style="background:#d1fae5;color:#065f46;">KD</div>
+                <div>
+                  <strong>Kalen Doe</strong>
+                  <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <span class="review-date">Reviewed on 7th March, 2024</span>
+              </div>
+              <p>I was totally apprehensive during his prior design experience. But the instructor, John Doe, did an amazing job of breaking down complex concepts in a really digestible manner. The video lectures are engaging, and the real-world examples really helped solidify my understanding.</p>
+            </div>
+            <div class="review-card">
+              <div class="reviewer-header">
+                <div class="reviewer-avatar" style="background:#dbeafe;color:#1e40af;">JD</div>
+                <div>
+                  <strong>Jonathan Doe</strong>
+                  <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                </div>
+                <span class="review-date">Reviewed on 7th March, 2024</span>
+              </div>
+              <p>Great course overall! The content is well-structured and the instructor explains things clearly. I especially enjoyed the practical exercises that reinforced the concepts taught in each module.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- MORE COURSES CAROUSEL -->
+      <section class="section-block carousel-section">
+        <h2>More Courses by Ronald Richards</h2>
+        <div class="carousel-wrapper">
+          <button class="carousel-btn prev" id="carouselPrev" aria-label="Previous">&#8249;</button>
+          <div class="carousel-track-outer">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="carousel-card">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=300&q=80" alt="Design course" />
+                <div class="carousel-card-body">
+                  <h4>Beginner's Guide to Design</h4>
+                  <div class="carousel-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="muted">(230 ratings)</span></div>
+                  <p class="carousel-price">$149.9</p>
+                </div>
+              </div>
+              <div class="carousel-card">
+                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=300&q=80" alt="Design course" />
+                <div class="carousel-card-body">
+                  <h4>Beginner's Guide to Design</h4>
+                  <div class="carousel-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="muted">(230 ratings)</span></div>
+                  <p class="carousel-price">$149.9</p>
+                </div>
+              </div>
+              <div class="carousel-card">
+                <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=300&q=80" alt="Design course" />
+                <div class="carousel-card-body">
+                  <h4>Beginner's Guide to Design</h4>
+                  <div class="carousel-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="muted">(230 ratings)</span></div>
+                  <p class="carousel-price">$149.9</p>
+                </div>
+              </div>
+              <div class="carousel-card">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=300&q=80" alt="Design course" />
+                <div class="carousel-card-body">
+                  <h4>Beginner's Guide to Design</h4>
+                  <div class="carousel-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="muted">(230 ratings)</span></div>
+                  <p class="carousel-price">$149.9</p>
+                </div>
+              </div>
+              <div class="carousel-card">
+                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=300&q=80" alt="Design course" />
+                <div class="carousel-card-body">
+                  <h4>Beginner's Guide to Design</h4>
+                  <div class="carousel-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="muted">(230 ratings)</span></div>
+                  <p class="carousel-price">$149.9</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn next" id="carouselNext" aria-label="Next">&#8250;</button>
+        </div>
+      </section>
+
+      <!-- LEARNER REVIEWS -->
+      <section class="section-block" id="learner-reviews">
+        <h2>Learner Reviews</h2>
+        <div class="reviews-summary">
+          <div class="big-rating">4.8</div>
+          <div class="rating-bars">
+            <div class="rating-row"><span>5 &#9733;</span><div class="bar-bg"><div class="bar-fill" style="width:72%"></div></div><span>72%</span></div>
+            <div class="rating-row"><span>4 &#9733;</span><div class="bar-bg"><div class="bar-fill" style="width:16%"></div></div><span>16%</span></div>
+            <div class="rating-row"><span>3 &#9733;</span><div class="bar-bg"><div class="bar-fill" style="width:8%"></div></div><span>8%</span></div>
+            <div class="rating-row"><span>2 &#9733;</span><div class="bar-bg"><div class="bar-fill" style="width:3%"></div></div><span>3%</span></div>
+            <div class="rating-row"><span>1 &#9733;</span><div class="bar-bg"><div class="bar-fill" style="width:1%"></div></div><span>1%</span></div>
+          </div>
+        </div>
+        <div class="reviews-list">
+          <div class="review-card">
+            <div class="reviewer-header">
+              <div class="reviewer-avatar" style="background:#fde68a;color:#92400e;">MD</div>
+              <div>
+                <strong>Mark Doe</strong>
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              </div>
+              <span class="review-date">Reviewed on 23rd March, 2024</span>
+            </div>
+            <p>I was totally apprehensive during his prior design experience. But the instructor, John Doe, did an amazing job of breaking down complex concepts in a really digestible manner. The video lectures are engaging, and the real-world examples really helped solidify my understanding.</p>
+          </div>
+          <div class="review-card">
+            <div class="reviewer-header">
+              <div class="reviewer-avatar" style="background:#d1fae5;color:#065f46;">KD</div>
+              <div>
+                <strong>Kalen Doe</strong>
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              </div>
+              <span class="review-date">Reviewed on 7th March, 2024</span>
+            </div>
+            <p>I was totally apprehensive during his prior design experience. But the instructor, John Doe, did an amazing job of breaking down complex concepts in a really digestible manner. The video lectures are engaging, and the real-world examples really helped solidify my understanding.</p>
+          </div>
+          <div class="review-card">
+            <div class="reviewer-header">
+              <div class="reviewer-avatar" style="background:#dbeafe;color:#1e40af;">JD</div>
+              <div>
+                <strong>Jonathan Doe</strong>
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+              </div>
+              <span class="review-date">Reviewed on 7th March, 2024</span>
+            </div>
+            <p>Great course overall! The content is well-structured and the instructor explains things clearly. I especially enjoyed the practical exercises that reinforced the concepts taught in each module.</p>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end .course-main -->
+
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="course-sidebar" id="courseSidebar">
+      <div class="sidebar-card" id="sidebarCard">
+        <h3 class="sidebar-title">Course Completion</h3>
+
+        <!-- ACCORDION SECTIONS -->
+        <div class="accordion">
+
+          <div class="accordion-section open" data-section="intro">
+            <button class="accordion-header">
+              <span>Introduction to UX Design</span>
+              <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-body">
+              <div class="lesson-item completed">
+                <span class="lesson-num">1</span>
+                <div class="lesson-info">
+                  <p>What is User Experience (UX) Design?</p>
+                  <span class="lesson-meta">4 min</span>
+                </div>
+                <span class="lesson-status done">&#10003;</span>
+              </div>
+              <div class="lesson-item completed">
+                <span class="lesson-num">2</span>
+                <div class="lesson-info">
+                  <p>Humanistic Overview of UX Design</p>
+                  <span class="lesson-meta">4 min</span>
+                </div>
+                <span class="lesson-status done">&#10003;</span>
+              </div>
+              <div class="lesson-item active-lesson">
+                <span class="lesson-num active-num">3</span>
+                <div class="lesson-info">
+                  <p>Understanding User Design in Digital Products</p>
+                  <span class="lesson-meta">4 min</span>
+                </div>
+                <span class="lesson-status playing">&#9654;</span>
+              </div>
+              <div class="lesson-item">
+                <span class="lesson-num">4</span>
+                <div class="lesson-info">
+                  <p>The Role of UX Design in Digital Products</p>
+                  <span class="lesson-meta">4 min</span>
+                </div>
+                <span class="lesson-status">&#10003;</span>
+              </div>
+              <div class="lesson-item">
+                <span class="lesson-num">5</span>
+                <div class="lesson-info">
+                  <p>Introduction to UX Design Tools and Techniques</p>
+                  <span class="lesson-meta">4 min</span>
+                </div>
+                <span class="lesson-status">&#10003;</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-section" data-section="basics">
+            <button class="accordion-header">
+              <span>Basics of User-Centered Design</span>
+              <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-body">
+              <div class="lesson-item">
+                <span class="lesson-num">1</span>
+                <div class="lesson-info">
+                  <p>Principles of User-Centered Design</p>
+                  <span class="lesson-meta">5 min</span>
+                </div>
+                <span class="lesson-status">&#10003;</span>
+              </div>
+              <div class="lesson-item">
+                <span class="lesson-num">2</span>
+                <div class="lesson-info">
+                  <p>Empathy in UX Design</p>
+                  <span class="lesson-meta">6 min</span>
+                </div>
+                <span class="lesson-status">&#10003;</span>
+              </div>
+              <div class="lesson-item">
+                <span class="lesson-num">3</span>
+                <div class="lesson-info">
+                  <p>User Research Methods</p>
+                  <span class="lesson-meta">7 min</span>
+                </div>
+                <span class="lesson-status">&#10003;</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-section" data-section="elements">
+            <button class="accordion-header">
+              <span>Elements of User Experience</span>
+              <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-body">
+              <div class="lesson-item">
+                <span class="lesson-num">1</span>
+                <div class="lesson-info">
+                  <p>Information Architecture</p>
+                  <span class="lesson-meta">5 min</span>
+                </div>
+                <span class="lesson-status">&#10003;</span>
+              </div>
+              <div class="lesson-item">
+                <span class="lesson-num">2</span>
+                <div class="lesson-info">
+                  <p>Interaction Design Fundamentals</p>
+                  <span class="lesson-meta">6 min</span>
+                </div>
+                <span class="lesson-status">&#10003;</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-section" data-section="visual">
+            <button class="accordion-header">
+              <span>Visual Design Principles</span>
+              <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-body">
+              <div class="lesson-item">
+                <span class="lesson-num">1</span>
+                <div class="lesson-info">
+                  <p>Color Theory in UX</p>
+                  <span class="lesson-meta">5 min</span>
+                </div>
+                <span class="lesson-status">&#10003;</span>
+              </div>
+              <div class="lesson-item">
+                <span class="lesson-num">2</span>
+                <div class="lesson-info">
+                  <p>Typography for Digital Interfaces</p>
+                  <span class="lesson-meta">4 min</span>
+                </div>
+                <span class="lesson-status">&#10003;</span>
+              </div>
+              <div class="lesson-item">
+                <span class="lesson-num">3</span>
+                <div class="lesson-info">
+                  <p>Layout and Grid Systems</p>
+                  <span class="lesson-meta">6 min</span>
+                </div>
+                <span class="lesson-status">&#10003;</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end .accordion -->
+      </div>
+    </aside>
+
+  </main>
+<footer class="footer">
+
+  <!-- COLUMN 1 -->
+  <div class="footer-column">
+
+    <div class="footer-logo">
+      <div class="custom-logo"></div>
+      <h2>Byway</h2>
+    </div>
+
+    <p>
+      Empowering learners through accessible and engaging online education.
+    </p>
+
+    <p>
+      Byway is a leading online learning platform dedicated to providing
+      high-quality, flexible, and affordable educational experiences.
+    </p>
+
+  </div>
+
+  <!-- COLUMN 2 -->
+  <div class="footer-column">
+    <h3>Get Help</h3>
+
+    <a href="#">Contact Us</a>
+    <a href="#">Latest Articles</a>
+    <a href="#">FAQ</a>
+  </div>
+
+  <!-- COLUMN 3 -->
+  <div class="footer-column">
+    <h3>Programs</h3>
+
+    <a href="#">Art & Design</a>
+    <a href="#">Business</a>
+    <a href="#">IT & Software</a>
+    <a href="#">Languages</a>
+    <a href="#">Programming</a>
+  </div>
+
+  <!-- COLUMN 4 -->
+  <div class="footer-column">
+    <h3>Contact Us</h3>
+
+    <p>Address: 123 Main Street, Anytown, CA 12345</p>
+    <p>Tel: +(123) 456-7890</p>
+    <p>Mail: bywayedu@webkul.in</p>
+
+    <div class="social-icons">
+      <a href="#">f</a>
+      <a href="#">G</a>
+      <a href="#">X</a>
+      <a href="#">◼</a>
+    </div>
+  </div>
+
+</footer>
+
+  <script src="OrderComplete.js"></script>
+</body>
+</html>
