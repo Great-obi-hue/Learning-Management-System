@@ -1,13 +1,748 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaaS-Website-App</title>
-    <link rel="stylesheet" href="Homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="HomeScreen.css">
 </head>
+
 <body>
-    
+    <main>
+        <div class="page" id="pageContent">
+
+
+            <nav class="navbar">
+                <div class="nav-left">
+                    <img class="logo" src="Images/Byway logo.png" alt="logo Image">
+                    <div class="category">Categories</div>
+                </div>
+
+                <div class="nav-center">
+                    <img src="Images/heroicons_magnifying-glass-20-solid.png" alt="search Icon">
+                    <input type="text" placeholder="Search courses">
+                </div>
+
+                <div class="nav-right">
+                    <div class="teacher">Teach on Byway</div>
+                    <img class="shop-cart" src="Images/shopping-Icon.png" alt="">
+                    <button onclick="" class="login">Log In</button>
+                    <button onclick="" class="signup">Sign Up</button>
+                </div>
+
+                <div class="menu-toggle">
+                    ☰
+                </div>
+            </nav>
+
+            <section class="hero">
+
+                <div class="hero-section">
+                    <div class="hero-text">
+                        <h1>Unlock Your Potential <br> with Byway</h1>
+                        <p>Welcome to Byway, where learning knows no bounds. We believe that <br>
+                            education is the key to personal and professional growth, and we're here to <br>
+                            guide you on your journey to success. </p>
+                        <button onclick="" class="start-btn">Start your instructor journey</button>
+                    </div>
+                    <div class="hero-image">
+                        <img src="Images/ChatGPT Image Apr 21, 2026, 06_36_16 PM.png" alt="Hero Image">
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="stats">
+
+                <div class="stat">
+                    <h2 class="count" data-target="250">0+</h2>
+                    <p>Courses by our best mentors</p>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="stat">
+                    <h2 class="count" data-target="1000">0+</h2>
+                    <p>Courses by our best mentors</p>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="stat">
+                    <h2 class="count" data-target="15">0+</h2>
+                    <p>Courses by our best mentors</p>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="stat">
+                    <h2 class="count" data-target="2400">0+</h2>
+                    <p>Courses by our best mentors</p>
+                </div>
+
+            </section>
+
+
+            <section class="courses">
+
+                <h2 class="section-title fade-in">Top Categories</h2>
+
+                <div class="course-grid">
+
+                    <!-- CARD 1 -->
+                    <div class="course-card fade-up">
+                        <img src="Images/Design.png" alt="">
+                        <h3>Design</h3>
+                        <p>11 Courses</p>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="course-card fade-up">
+                        <img src="Images/Development.png" alt="">
+                        <h3> Web Development</h3>
+                        <p>12 Courses</p>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="course-card fade-up">
+                        <img src="Images/marketing.png" alt="">
+                        <h3>Marketing</h3>
+                        <p>12 Courses</p>
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div class="course-card fade-up">
+                        <img src="Images/physics.png" alt="">
+                        <h3>Physics</h3>
+                        <p>14 Courses</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="Top-courses">
+
+                <h2 class="Top-title animate-fade">Top Courses</h2>
+
+                <div class="Top-grid">
+
+                    <!-- CARD 1 -->
+                    <div class="Top-card animate-rise">
+                        <img src="Images/Rectangle 1080.png" alt="">
+                        <h3>Beginner's Guide to Design</h3>
+                        <p>By Ronalds Richard</p>
+                        <div class="rating">
+                            <img src="Images/ratings.png" alt="star">
+                            <small>(1200 Ratings)</small>
+                        </div>
+                        <p>22 Total Hours. 155 Lectures. Beginner</p>
+                        <h3>$149.9</h3>
+
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="Top-card animate-rise">
+                        <img src="Images/marketing-photo.jpg" alt="">
+                        <h3>Beginner's Guide to Marketing</h3>
+                        <p>By Daniel Cornell</p>
+                        <div class="rating">
+                            <img src="Images/ratings.png" alt="star">
+                            <small>(1200 Ratings)</small>
+                        </div>
+                        <p>22 Total Hours. 158 Lectures. Beginner</p>
+                        <h3>$150.9</h3>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="Top-card animate-rise">
+                        <img src="Images/development-photo.jpg" alt="">
+                        <h3>Beginner's Guide to Web Development</h3>
+                        <p>By Divine Stalone</p>
+                        <div class="rating">
+                            <img src="Images/ratings.png" alt="star">
+                            <small>(1200 Ratings)</small>
+                        </div>
+                        <p>22 Total Hours. 120 Lectures. Beginner</p>
+                        <h3>$145.9</h3>
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div class="Top-card animate-rise">
+                        <img src="Images/physics-photo.jpg" alt="">
+                        <h3>Beginner's Guide to Physics</h3>
+                        <p>By Great Crystal</p>
+                        <div class="rating">
+                            <img src="Images/ratings.png" alt="star">
+                            <small>(1200 Ratings)</small>
+                        </div>
+                        <p>22 Total Hours. 160 Lectures. Beginner</p>
+                        <h3>$156.9</h3>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="tutors">
+
+                <h2 class="tutor-title fade-in">Top Instructors</h2>
+
+                <div class="tutor-grid">
+
+                    <!-- CARD 1 -->
+                    <div class="tutor-card fade-up">
+                        <img src="Images/Rectangle 1136.png" alt="">
+                        <h3>Ronald Richards</h3>
+                        <p>UI/UX Designer</p>
+                        <hr>
+                        <div class="rates">
+                            <div class="left-rate">
+                                <img src="Images/icon.png" alt="star">
+                                <span>4.9</span>
+                            </div>
+
+                            <small>2400 Students</small>
+                        </div>
+
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="tutor-card fade-up">
+                        <img src="Images/Dev-Mr.webp" alt="">
+                        <h3>Divine Stalone</h3>
+                        <p>Web Developer</p>
+                        <hr>
+                        <div class="rates">
+                            <div class="left-rate">
+                                <img src="Images/icon.png" alt="star">
+                                <span>4.8</span>
+                            </div>
+
+                            <small>2200 Students</small>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="tutor-card fade-up">
+                        <img src="Images/marketer-p.jpg" alt="">
+                        <h3>Daniel Cornell</h3>
+                        <p>Marketing Specialist</p>
+                        <hr>
+                        <div class="rates">
+                            <div class="left-rate">
+                                <img src="Images/icon.png" alt="star">
+                                <span>4.9</span>
+                            </div>
+
+                            <small>2600 Students</small>
+                        </div>
+
+
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div class="tutor-card fade-up">
+                        <img src="Images/Mr physics.webp" alt="">
+                        <h3>Great Crystal</h3>
+                        <p>Physics Professor</p>
+                        <hr>
+                        <div class="rates">
+                            <div class="left-rate">
+                                <img src="Images/icon.png" alt="star">
+                                <span>5.0</span>
+                            </div>
+
+                            <small>2900 Students</small>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </section>
+
+            <section class="testimonial">
+
+                <!-- HEADER -->
+                <div class="testimonial-header slide-left">
+                    <h2>
+                        What Our Customer Say <br>
+                        About Us
+                    </h2>
+
+                    <div class="controls">
+                        <button class="nav prev">
+                            <img src="Images/prev btn.png" alt="Previous">
+                        </button>
+
+                        <button class="nav next">
+                            <img src="Images/next btn.png" alt="Next">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CAROUSEL -->
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-track">
+
+                        <!-- CARD 1 -->
+                        <div class="testimonial-card slide-right">
+
+                            <img src="Images/Vector.png" class="quote-img" alt="quote">
+
+                            <p>
+                                "Byway's tech courses are top-notch! As someone <br> who's always looking to stay ahead
+                                in the rapidly <br> evolving tech world,
+                                I appreciate the up-to-date <br> content and engaging multimedia.
+                            </p>
+
+                            <div class="user">
+                                <img src="Images/Ellipse 61.png" alt="">
+                                <div>
+                                    <h4>Jane Doe</h4>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- CARD 2 -->
+                        <div class="testimonial-card slide-right">
+
+                            <img src="Images/Vector.png" class="quote-img" alt="quote">
+
+                            <p>
+                                "Byway's tech courses are top-notch! As someone <br> who's always looking to stay ahead
+                                in the rapidly <br> evolving tech world,
+                                I appreciate the up-to-date <br> content and engaging multimedia.
+                            </p>
+
+                            <div class="user">
+                                <img src="Images/Ellipse 61.png" alt="">
+                                <div>
+                                    <h4>Jane Doe</h4>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- CARD 3 -->
+                        <div class="testimonial-card slide-right">
+
+                            <img src="Images/Vector.png" class="quote-img" alt="quote">
+
+                            <p>
+                                "Byway's tech courses are top-notch! As someone <br> who's always looking to stay ahead
+                                in the rapidly <br> evolving tech world,
+                                I appreciate the up-to-date <br> content and engaging multimedia.
+                            </p>
+
+                            <div class="user">
+                                <img src="Images/Ellipse 61.png" alt="">
+                                <div>
+                                    <h4>Jane Doe</h4>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- CARD 4 -->
+                        <div class="testimonial-card slide-right">
+
+                            <img src="Images/Vector.png" class="quote-img" alt="quote">
+
+                            <p>
+                                "Byway's tech courses are top-notch! As someone <br> who's always looking to stay ahead
+                                in the rapidly <br> evolving tech world,
+                                I appreciate the up-to-date <br> content and engaging multimedia.
+                            </p>
+
+                            <div class="user">
+                                <img src="Images/Ellipse 61.png" alt="">
+                                <div>
+                                    <h4>Jane Doe</h4>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- CARD 5 -->
+                        <div class="testimonial-card slide-right">
+
+                            <img src="Images/Vector.png" class="quote-img" alt="quote">
+
+                            <p>
+                                "Byway's tech courses are top-notch! As someone <br> who's always looking to stay ahead
+                                in the rapidly <br> evolving tech world,
+                                I appreciate the up-to-date <br> content and engaging multimedia.
+                            </p>
+
+                            <div class="user">
+                                <img src="Images/Ellipse 61.png" alt="">
+                                <div>
+                                    <h4>Jane Doe</h4>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- CARD 6 -->
+                        <div class="testimonial-card slide-right">
+
+                            <img src="Images/Vector.png" class="quote-img" alt="quote">
+
+                            <p>
+                                "Byway's tech courses are top-notch! As someone <br> who's always looking to stay ahead
+                                in the rapidly <br> evolving tech world,
+                                I appreciate the up-to-date <br> content and engaging multimedia.
+                            </p>
+
+                            <div class="user">
+                                <img src="Images/Ellipse 61.png" alt="">
+                                <div>
+                                    <h4>Jane Doe</h4>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <section class="cta-section">
+                <div class="cta-container">
+
+                    <!-- ROW 1 -->
+                    <div class="cta-row">
+                        <div class="cta-image slide-left">
+                            <img src="Images/Instructor image.png" alt="">
+                        </div>
+
+                        <div class="cta-text slide-right">
+                            <h3>Become an Instructor</h3>
+                            <p>
+                                Instructors from around the world teach millions of students on Byway. <br>
+                                We provide the tools and skills to teach what you love.
+                            </p>
+                            <button class="cta-btn">
+                                Start Your Instructor Journey
+                                <img src="Images/arrow-narrow-right.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ROW 2 -->
+                    <div class="cta-row reverse">
+                        <div class="cta-image slide-right">
+                            <img src="Images/Education image.png" alt="">
+                        </div>
+
+                        <div class="cta-text slide-left">
+                            <h3>Transform your life through education</h3>
+                            <p>
+                                Learners around the world are launching new careers, advancing in <br> their fields,
+                                and enriching their lives.
+                            </p>
+                            <button class="cta-btn">
+                                Checkout Courses
+                                <img src="Images/arrow-narrow-right.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+
+            <footer class="footer">
+
+                <div class="footer-container">
+
+                    <!-- COLUMN 1 -->
+                    <div class="footer-col">
+                        <img src="Images/logo white.png" alt="Byway Logo" class="footer-logo">
+
+                        <p>
+                            Empowering learners through accessible and engaging online education. <br>
+                            Byway is a leading online learning platform dedicated to <br> providing high-quality,
+                            flexible,and affordable educational <br> experiences.
+                        </p>
+                    </div>
+
+                    <!-- COLUMN 2 -->
+                    <div class="footer-col">
+                        <h3>Get Help</h3>
+
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Latest Articles</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- COLUMN 3 -->
+                    <div class="footer-col">
+                        <h3>Programs</h3>
+
+                        <ul>
+                            <li><a href="#">Art & Design</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">IT & Software</a></li>
+                            <li><a href="#">Languages</a></li>
+                            <li><a href="#">Programming</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- COLUMN 4 -->
+                    <div class="footer-col">
+                        <h3>Contact Us</h3>
+
+                        <ul>
+                            <li>Address: 123 Main Street, Anytown, CA 12345</li>
+                            <li>Tel: +(123) 456-7890</li>
+                            <li>Mail: bywayedu@webkul.in</li>
+                        </ul>
+
+                        <img src="Images/footer image.png" alt="social media icons" class="footer-image">
+                    </div>
+
+                </div>
+
+            </footer>
+
+
+
+
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- MODAL -->
+    <div class="modal" id="signupModal">
+
+        <div class="modal-content">
+
+            <!-- LEFT IMAGE -->
+            <div class="modal-left image-side">
+                <img src="Images/signup-modal.png" alt="Signup Illustration">
+            </div>
+
+            <!-- RIGHT FORM -->
+            <div class="modal-right form-side">
+
+                <h1>Create Your Account</h1>
+
+                <div class="form">
+
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <div class="row">
+                            <input type="text" placeholder="First Name">
+                            <input type="text" placeholder="Last Name">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Username</label>
+                        <input type="text" placeholder="Username">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Email ID">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="row">
+                            <input type="password" placeholder="Enter Password">
+                            <input type="password" placeholder="Confirm Password">
+                        </div>
+                    </div>
+
+                    <div class="button-row">
+                        <button class="create-btn" data-link="">
+                            Create Account
+                            <img src="Images/arrow-narrow-right.png" alt="arrow icon" class="btn-icon">
+                        </button>
+                    </div>
+
+                    <div class="divider">
+                        <hr>
+                        <span>Sign up with</span>
+                        <hr>
+                    </div>
+
+                    <div class="socials">
+                        <button class="social-btn facebook">
+                            <img src="Images/Facebook_Logo_Primary 2.png" alt="">
+                            Facebook
+                        </button>
+
+                        <button class="social-btn google">
+                            <img src="Images/google.png" alt="">
+                            Google
+                        </button>
+
+                        <button class="social-btn microsoft">
+                            <img src="Images/image 1.png" alt="">
+                            Microsoft
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="modal" id="loginModal">
+
+        <div class="modal-content">
+
+            <!-- LEFT: FORM -->
+            <div class="modal-left form-side">
+
+                <h1>Sign in to your Account</h1>
+
+                <div class="form">
+
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="text" placeholder="Username or Email">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="Enter Password">
+                    </div>
+
+                    <div class="button-row">
+                        <button class="login-btn" data-link="">
+                            Sign In
+                            <img src="Images/arrow-narrow-right.png" class="btn-icon">
+                        </button>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="divider">
+                        <hr>
+                        <span>Sign in with</span>
+                        <hr>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="socials">
+
+                        <button class="social-btn facebook">
+                            <img src="Images/Facebook_Logo_Primary 2.png">
+                            Facebook
+                        </button>
+
+                        <button class="social-btn google">
+                            <img src="Images/google.png">
+                            Google
+                        </button>
+
+                        <button class="social-btn microsoft">
+                            <img src="Images/image 1.png">
+                            Microsoft
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="modal-right image-side">
+                <img src="Images/login-modal.png">
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
-<script src="Homepage.js"></script>
+<script src="HomeScreen.js"></script>
+
 </html>
