@@ -1,7 +1,7 @@
 // ========== 36 COURSES (9 per page x 4 pages) ==========
 const courses = [
     // Page 1 (Courses 1-9)
-    { id: 1, title: "Beginner's Guide to Design", author: "Ronald Richards", price: 149.9, rating: 5, reviews: 1200, students: "22 Total Hours", lectures: "155 Lectures", level: "Beginner", image: "Images/CategoryPage Imgs/img 1.png", coursePage: "course-detail.html" },
+    { id: 1, title: "Beginner's Guide to Design", author: "Ronald Richards", price: 149.9, rating: 5, reviews: 1200, students: "22 Total Hours", lectures: "155 Lectures", level: "Beginner", image: "Images/CategoryPage Imgs/img 1.png", coursePage: "CoursePage.html" },
     { id: 2, title: "UI/UX Design Masterclass", author: "Esther Howard", price: 129.9, rating: 5, reviews: 950, students: "18 Total Hours", lectures: "132 Lectures", level: "Intermediate", image: "Images/CourseCard Imgs/download (1).jpg", coursePage: "#" },
     { id: 3, title: "Advanced Web Design", author: "Cameron Williamson", price: 179.9, rating: 4, reviews: 850, students: "25 Total Hours", lectures: "210 Lectures", level: "Advanced", image: "Images/CourseCard Imgs/download (2).jpg", coursePage: "#" },
     { id: 4, title: "Graphic Design Essentials", author: "Jenny Wilson", price: 99.9, rating: 5, reviews: 1450, students: "15 Total Hours", lectures: "98 Lectures", level: "Beginner", image: "Images/CourseCard Imgs/download (3).jpg", coursePage: "#" },
@@ -47,13 +47,14 @@ const courses = [
 
 // ========== POPULAR MENTORS DATA ==========
 const mentors = [
-    { id: 1, name: "Ronald Richards", title: "UI/UX Designer", rating: 4.6, students: 2400, image: "Images/CategoryPage Imgs/img 2.png" },
-    { id: 2, name: "Donald Leechards", title: "Full Stack Developer", rating: 4.9, students: 2400, image: "Images/CategoryPage Imgs/download(2).jpg" },
-    { id: 3, name: "Ronaldo Dunkards", title: "Web Designer", rating: 4.7, students: 2300, image: "Images/CategoryPage Imgs/download.jpg" },
-    { id: 4, name: "Ronaldin Richie", title: "Ai Analyst", rating: 4.8, students: 2400, image: "Images/CategoryPage Imgs/images (1).jpg" },
-    { id: 5, name: "Ronaldino Ricardo", title: "Robotics Engineer", rating: 4.5, students: 2500, image: "Images/CategoryPage Imgs/images.jpg" }  
+    { id: 1, name: "Ronald Richards", title: "UI/UX Designer", rating: 4.9, students: 2400, image: "Images/CategoryPage Imgs/img 2.png", mentorPage: "MentorPage.html" },
+    { id: 2, name: "Donald Leechards", title: "Web Developer", rating: 4.8, students: 2400, image: "Images/CategoryPage Imgs/download.jpg", mentorPage: "#" },
+    { id: 3, name: "Ronaldo Richie", title: "Data Analyst", rating: 4.6, students: 2300, image: "Images/CategoryPage Imgs/download(2).jpg", mentorPage: "#" },
+    { id: 4, name: "Ronaldino Richman", title: "User Experience Designer", rating: 4.7, students: 2400, image: "Images/CategoryPage Imgs/images.jpg", mentorPage: "#" },
+    { id: 5, name: "Ronaldin Ricardo", title: "Robotics Engineer", rating: 4.5, students: 2500, image: "Images/CategoryPage Imgs/images (1).jpg", mentorPage: "#" }
 ];
 
+// Carousel uses the same courses
 const carouselCourses = [...courses];
 
 const coursesGrid = document.getElementById("coursesGrid");
@@ -78,8 +79,30 @@ function generateStars(rating) {
     return stars;
 }
 
-// Create mentor card
+// Create mentor card (first one clickable to MentorPage.html)
 function createMentorCard(mentor) {
+    const isFirstMentor = mentor.id === 1;
+    const clickableUrl = isFirstMentor && mentor.mentorPage && mentor.mentorPage !== "#" 
+        ? mentor.mentorPage 
+        : null;
+    
+    if (clickableUrl) {
+        return `
+            <a href="${clickableUrl}" class="mentor-card-link" style="text-decoration: none; color: inherit; display: block;">
+                <div class="mentor-card" data-id="${mentor.id}">
+                    <img src="${mentor.image}" alt="${mentor.name}" class="mentor-image" onerror="this.src='https://placehold.co/120x120/e2e8f0/64748b?text=Mentor'">
+                    <h3 class="mentor-name">${mentor.name}</h3>
+                    <p class="mentor-title">${mentor.title}</p>
+                    <div class="mentor-rating">
+                        ${generateStars(mentor.rating)}
+                        <span>${mentor.rating}</span>
+                    </div>
+                    <p class="mentor-students">${mentor.students.toLocaleString()} Students</p>
+                </div>
+            </a>
+        `;
+    }
+    
     return `
         <div class="mentor-card" data-id="${mentor.id}">
             <img src="${mentor.image}" alt="${mentor.name}" class="mentor-image" onerror="this.src='https://placehold.co/120x120/e2e8f0/64748b?text=Mentor'">
@@ -101,14 +124,17 @@ function renderMentors() {
         .map(createMentorCard)
         .join("");
     
-    document.querySelectorAll('.mentor-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const id = card.getAttribute('data-id');
-            const found = mentors.find(m => m.id == id);
-            if (found) {
-                alert(`👨‍🏫 Mentor: ${found.name}\n📚 ${found.title}\n⭐ ${found.rating} · ${found.students.toLocaleString()} students`);
-            }
-        });
+    // Add click handlers for non-linked mentor cards (those without the anchor wrapper)
+    document.querySelectorAll('.mentor-card:not(.mentor-card-link .mentor-card)').forEach(card => {
+        const id = card.getAttribute('data-id');
+        if (id && id !== '1') {
+            card.addEventListener('click', () => {
+                const found = mentors.find(m => m.id == id);
+                if (found) {
+                    alert(`👨‍🏫 Mentor: ${found.name}\n📚 ${found.title}\n⭐ ${found.rating} · ${found.students.toLocaleString()} students`);
+                }
+            });
+        }
     });
 }
 
@@ -160,7 +186,7 @@ function createCourseCard(course) {
     `;
 }
 
-// Carousel card creator (uses same images as courses)
+// Carousel card creator
 function createCarouselCard(course) {
     const isFirstCourse = course.id === 1;
     const clickableUrl = isFirstCourse && course.coursePage && course.coursePage !== "#" 
@@ -457,7 +483,7 @@ function startAutoCarousel() {
             currentCarouselIndex = currentCarouselIndex >= maxIndex ? 0 : currentCarouselIndex + 1;
             updateCarousel();
         }
-    }, 3000);
+    }, 4000);
 }
 
 function stopAutoCarousel() {
