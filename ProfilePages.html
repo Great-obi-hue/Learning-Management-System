@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="ProfilePages.css">
+</head>
+<body>
+
+<div class="profile-page">
+
+  <!-- Banner -->
+  <div class="profile-banner"></div>
+
+  <!-- Profile Card -->
+  <div class="profile-card">
+    <img id="profilePreview" class="avatar" src="https://via.placeholder.com/100">
+
+    <!-- Image Upload -->
+    <input type="file" onchange="previewImage(event)" style="margin-top:10px;">
+
+    <h2 id="displayName">John Doe</h2>
+    <p class="role" id="displayHeadline">UI/UX Designer</p>
+
+    <div class="stats">
+      <span id="courseCount">Courses: 0</span>
+      <span id="studentCount">Students: 0</span>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('profile', event)">Profile</button>
+    <button class="tab" onclick="showTab('courses', event)">My Courses</button>
+    <button class="tab" onclick="showTab('teachers', event)">Teachers</button>
+    <button class="tab" onclick="showTab('messages', event)">Messages</button>
+    <button class="tab" onclick="showTab('reviews', event)">Reviews</button>
+  </div>
+
+  <!-- DYNAMIC CONTENT -->
+  <div id="tabContent"></div>
+
+</div>
+
+<script src="ProfilePages.js"></script>
+</body>
+</html>
