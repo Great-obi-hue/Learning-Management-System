@@ -81,7 +81,7 @@ createBtn.addEventListener("click", function () {
     localStorage.setItem("userData", JSON.stringify(userData));
 
     alert("Account created successfully!");
-            window.location.href = "HomeScreen.html";
+            window.location.href = "Dashboard.html";
 
 });
 
@@ -139,7 +139,7 @@ loginSubmitBtn.addEventListener("click", function () {
 
     if (validUser && validPassword) {
         alert("Login successful!");
-        window.location.href = "HomeScreen.html";
+        window.location.href = "Dashboard.html";
     } else {
         alert("Invalid login details");
     }
