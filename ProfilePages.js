@@ -1,270 +1,114 @@
-// ==============================
-// 🧠 CURRENT USER SYSTEM
-// ==============================
-function getCurrentUser() {
-  let user = localStorage.getItem("currentUser");
+document.addEventListener('DOMContentLoaded', function() {
+    // ----- Sidebar Navigation (Profile / My Courses / Teachers) -----
+    const sidebarItems = document.querySelectorAll('.sidebar-item');
+    const coursesModal = document.getElementById('coursesModal');
+    const teachersModal = document.getElementById('teachersModal');
+    const closeCoursesBtn = document.getElementById('closeCoursesModal');
+    const closeTeachersBtn = document.getElementById('closeTeachersModal');
+    const profileSection = document.getElementById('profileSection');
 
-  // fallback (for testing)
-  if (!user) {
-    user = "demoUser";
-    localStorage.setItem("currentUser", user);
-  }
-
-  return user;
-}
-
-function getUserKey(key) {
-  return `${key}_${getCurrentUser()}`;
-}
-
-
-
-// ==============================
-// 🔁 TAB SYSTEM (DYNAMIC)
-// ==============================
-function showTab(tab, event) {
-  document.querySelectorAll(".tab").forEach(btn => btn.classList.remove("active"));
-  event.target.classList.add("active");
-
-  const container = document.getElementById("tabContent");
-
-  if (tab === "profile") container.innerHTML = getProfileHTML();
-  if (tab === "courses") container.innerHTML = getCoursesHTML();
-  if (tab === "teachers") container.innerHTML = getTeachersHTML();
-  if (tab === "messages") container.innerHTML = getMessagesHTML();
-  if (tab === "reviews") container.innerHTML = getReviewsHTML();
-
-  loadProfile();
-}
-
-
-
-// ==============================
-// 🧱 PROFILE HTML TEMPLATE
-// ==============================
-function getProfileHTML() {
-  return `
-    <div class="card">
-      <h3>Personal Information</h3>
-
-      <div class="grid">
-        <input id="firstName" placeholder="First Name">
-        <input id="lastName" placeholder="Last Name">
-        <input id="username" placeholder="Username">
-        <input id="headline" placeholder="Headline">
-      </div>
-
-      <textarea id="description" placeholder="Description"></textarea>
-    </div>
-
-    <div class="card">
-      <h3>Social Links</h3>
-
-      <input id="website" placeholder="Website">
-      <input id="twitter" placeholder="Twitter">
-      <input id="linkedin" placeholder="LinkedIn">
-      <input id="youtube" placeholder="YouTube">
-      <input id="facebook" placeholder="Facebook">
-    </div>
-
-    <button class="save-btn" onclick="saveProfile()">Save Changes</button>
-  `;
-}
-
-
-
-// ==============================
-// 📚 COURSES
-// ==============================
-function getCoursesHTML() {
-  return `
-    <div class="card">
-      <h3>My Courses</h3>
-      <p>No courses yet.</p>
-    </div>
-  `;
-}
-
-
-
-// ==============================
-// 👨‍🏫 TEACHERS
-// ==============================
-function getTeachersHTML() {
-  return `
-    <div class="card">
-      <h3>Teachers</h3>
-      <p>No teachers yet.</p>
-    </div>
-  `;
-}
-
-
-
-// ==============================
-// 💬 MESSAGES
-// ==============================
-function getMessagesHTML() {
-  return `
-    <div class="card">
-      <h3>Messages</h3>
-      <textarea id="msgInput" placeholder="Type message..."></textarea>
-      <button onclick="sendMessage()">Send</button>
-      <div id="msgList"></div>
-    </div>
-  `;
-}
-
-function sendMessage() {
-  const input = document.getElementById("msgInput");
-  const list = document.getElementById("msgList");
-
-  const msg = document.createElement("p");
-  msg.innerText = input.value;
-
-  list.appendChild(msg);
-  input.value = "";
-}
-
-
-
-// ==============================
-// ⭐ REVIEWS
-// ==============================
-function getReviewsHTML() {
-  return `
-    <div class="card">
-      <h3>Reviews</h3>
-      <p>No reviews yet.</p>
-    </div>
-  `;
-}
-
-
-
-// ==============================
-// 🖼️ IMAGE
-// ==============================
-function previewImage(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-
-  reader.onload = function () {
-    const img = reader.result;
-
-    document.getElementById("profilePreview").src = img;
-
-    localStorage.setItem(getUserKey("profileImage"), img);
-  };
-
-  reader.readAsDataURL(file);
-}
-
-
-
-// ==============================
-// 💾 SAVE PROFILE
-// ==============================
-function saveProfile() {
-  const profile = {
-    firstName: getValue("firstName"),
-    lastName: getValue("lastName"),
-    username: getValue("username"),
-    headline: getValue("headline"),
-    description: getValue("description"),
-    website: getValue("website"),
-    twitter: getValue("twitter"),
-    linkedin: getValue("linkedin"),
-    youtube: getValue("youtube"),
-    facebook: getValue("facebook"),
-  };
-
-  localStorage.setItem(getUserKey("profileData"), JSON.stringify(profile));
-
-  updateProfileCard(profile);
-
-  showMessage("Profile saved!");
-}
-
-
-
-// ==============================
-// 📥 LOAD PROFILE
-// ==============================
-function loadProfile() {
-  const data = JSON.parse(localStorage.getItem(getUserKey("profileData")));
-  const image = localStorage.getItem(getUserKey("profileImage"));
-
-  if (data) {
-    Object.keys(data).forEach(key => {
-      const el = document.getElementById(key);
-      if (el) el.value = data[key];
+    // Set "My Profile" as default active
+    sidebarItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.dataset.page === 'profile') {
+            item.classList.add('active');
+        }
     });
 
-    updateProfileCard(data);
-  }
+    // Sidebar click handler
+    sidebarItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const page = this.dataset.page;
 
-  if (image) {
-    document.getElementById("profilePreview").src = image;
-  }
-}
+            // Update active state
+            sidebarItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
 
+            if (page === 'profile') {
+                // Show profile main content, hide modals
+                profileSection.classList.add('active');
+                closeModal(coursesModal);
+                closeModal(teachersModal);
+            } else if (page === 'courses') {
+                // Hide profile section, show courses modal
+                profileSection.classList.remove('active');
+                closeModal(teachersModal);
+                openModal(coursesModal);
+            } else if (page === 'teachers') {
+                // Hide profile section, show teachers modal
+                profileSection.classList.remove('active');
+                closeModal(coursesModal);
+                openModal(teachersModal);
+            }
+        });
+    });
 
+    // Modal close buttons
+    if (closeCoursesBtn) {
+        closeCoursesBtn.addEventListener('click', function() {
+            closeModal(coursesModal);
+            // Return to My Profile if modal closed
+            resetToProfile();
+        });
+    }
 
-// ==============================
-// 🔄 UPDATE HEADER CARD
-// ==============================
-function updateProfileCard(data) {
-  const name = `${data.firstName || ""} ${data.lastName || ""}`;
-  document.getElementById("displayName").innerText = name || "John Doe";
-  document.getElementById("displayHeadline").innerText = data.headline || "No headline";
-}
+    if (closeTeachersBtn) {
+        closeTeachersBtn.addEventListener('click', function() {
+            closeModal(teachersModal);
+            resetToProfile();
+        });
+    }
 
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function(e) {
+        if (e.target === coursesModal) {
+            closeModal(coursesModal);
+            resetToProfile();
+        }
+        if (e.target === teachersModal) {
+            closeModal(teachersModal);
+            resetToProfile();
+        }
+    });
 
+    function openModal(modal) {
+        if (modal) modal.classList.add('show');
+    }
 
-// ==============================
-// 🧰 HELPERS
-// ==============================
-function getValue(id) {
-  const el = document.getElementById(id);
-  return el ? el.value : "";
-}
+    function closeModal(modal) {
+        if (modal) modal.classList.remove('show');
+    }
 
+    function resetToProfile() {
+        // Activate My Profile sidebar and show profile content
+        sidebarItems.forEach(i => i.classList.remove('active'));
+        const profileTab = document.querySelector('.sidebar-item[data-page="profile"]');
+        if (profileTab) profileTab.classList.add('active');
+        if (profileSection) profileSection.classList.add('active');
+    }
 
+    // ----- Profile Dropdown Toggle -----
+    const profileIconBtn = document.getElementById('profileIconBtn');
+    const profileDropdown = document.getElementById('profileDropdown');
 
-// ==============================
-// 🔔 UI MESSAGE
-// ==============================
-function showMessage(msg) {
-  let el = document.getElementById("msg");
+    if (profileIconBtn && profileDropdown) {
+        profileIconBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            profileDropdown.classList.toggle('show');
+        });
 
-  if (!el) {
-    el = document.createElement("div");
-    el.id = "msg";
-    el.style.position = "fixed";
-    el.style.bottom = "20px";
-    el.style.right = "20px";
-    el.style.background = "#7c3aed";
-    el.style.color = "#fff";
-    el.style.padding = "10px 20px";
-    el.style.borderRadius = "5px";
-    document.body.appendChild(el);
-  }
+        document.addEventListener('click', function(e) {
+            if (!profileIconBtn.contains(e.target) && !profileDropdown.contains(e.target)) {
+                profileDropdown.classList.remove('show');
+            }
+        });
+    }
 
-  el.innerText = msg;
-  el.style.display = "block";
-
-  setTimeout(() => el.style.display = "none", 3000);
-}
-
-
-
-// ==============================
-// 🚀 INIT
-// ==============================
-window.onload = function () {
-  document.getElementById("tabContent").innerHTML = getProfileHTML();
-  loadProfile();
-};
+    // ----- (Optional) Change Photo Simulation -----
+    const changePhotoBtn = document.querySelector('.change-photo-btn');
+    if (changePhotoBtn) {
+        changePhotoBtn.addEventListener('click', function() {
+            alert('Feature coming soon: upload a new profile picture.');
+        });
+    }
+});

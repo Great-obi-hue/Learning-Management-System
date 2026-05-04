@@ -1,48 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile</title>
-  <link rel="stylesheet" href="ProfilePages.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Byway</title>
+    <link rel="stylesheet" href="ProfilePages.css">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="HomeScreen.html" class="logo">
+                <img src="Images/Byway logo.png" alt="Byway Logo" class="logo-img">
+                <span class="logo-text">Byway</span>
+            </a>
+            <nav class="main-nav">
+                <a href="HomeScreen.html">Home</a>
+                <a href="CategoryPage.html">Courses</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <!-- Cart Icon -->
+                <a href="ShoppingCart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <!-- Profile Icon (active / logged in) -->
+                <div class="profile-icon-wrapper">
+                    <button class="profile-icon-btn" id="profileIconBtn">
+                        <img src="Images/Instructor image.png" alt="User Avatar" class="user-avatar-small">
+                    </button>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <a href="ProfilePages.html" class="dropdown-item active">My Profile</a>
+                        <a href="OrderComplete.html" class="dropdown-item">My Orders</a>
+                        <a href="#" class="dropdown-item logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<div class="profile-page">
+    <!-- Main Content: Sidebar + Profile Area -->
+    <div class="profile-container">
+        <!-- Sidebar -->
+        <aside class="profile-sidebar">
+            <ul class="sidebar-menu">
+                <li class="sidebar-item active" data-page="profile">
+                    <i class="fas fa-user-circle"></i> My Profile
+                </li>
+                <li class="sidebar-item" data-page="courses">
+                    <i class="fas fa-book"></i> My Courses
+                </li>
+                <li class="sidebar-item" data-page="teachers">
+                    <i class="fas fa-chalkboard-teacher"></i> Teachers
+                </li>
+            </ul>
+        </aside>
 
-  <!-- Banner -->
-  <div class="profile-banner"></div>
+        <!-- Main Profile Content -->
+        <main class="profile-main" id="profileMain">
+            <!-- My Profile Section (default visible) -->
+            <section class="profile-section active" id="profileSection">
+                <div class="profile-card">
+                    <div class="profile-picture-container">
+                        <img src="Images/Instructor image.png" alt="John Doe" class="profile-picture">
+                        <button class="change-photo-btn"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <div class="profile-details">
+                        <h1 class="profile-name">John Doe</h1>
+                        <div class="detail-row">
+                            <i class="fas fa-envelope"></i>
+                            <span>john.doe@example.com</span>
+                        </div>
+                        <div class="detail-row">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (123) 456-7890</span>
+                        </div>
+                        <div class="detail-row">
+                            <i class="fas fa-globe"></i>
+                            <span>www.example.com</span>
+                        </div>
+                        <div class="about-section">
+                            <h3>About</h3>
+                            <p>I am a developer and I love to code. I have been coding for over 10 years and I have worked on many projects.</p>
+                        </div>
+                        <div class="skills-section">
+                            <h3>Skills</h3>
+                            <div class="skills-cloud">
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">Agile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-  <!-- Profile Card -->
-  <div class="profile-card">
-    <img id="profilePreview" class="avatar" src="https://via.placeholder.com/100">
-
-    <!-- Image Upload -->
-    <input type="file" onchange="previewImage(event)" style="margin-top:10px;">
-
-    <h2 id="displayName">John Doe</h2>
-    <p class="role" id="displayHeadline">UI/UX Designer</p>
-
-    <div class="stats">
-      <span id="courseCount">Courses: 0</span>
-      <span id="studentCount">Students: 0</span>
+            <!-- Inline fallback (hidden, sidebar switches) – not used, modals instead -->
+        </main>
     </div>
-  </div>
 
-  <!-- Tabs -->
-  <div class="tabs">
-    <button class="tab active" onclick="showTab('profile', event)">Profile</button>
-    <button class="tab" onclick="showTab('courses', event)">My Courses</button>
-    <button class="tab" onclick="showTab('teachers', event)">Teachers</button>
-    <button class="tab" onclick="showTab('messages', event)">Messages</button>
-    <button class="tab" onclick="showTab('reviews', event)">Reviews</button>
-  </div>
+    <!-- ==================== MODALS ==================== -->
 
-  <!-- DYNAMIC CONTENT -->
-  <div id="tabContent"></div>
+    <!-- Modal: My Courses -->
+    <div class="modal-overlay" id="coursesModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>My Courses</h2>
+                <button class="modal-close" id="closeCoursesModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <img src="Images/CourseCard Imgs/download (1).jpg" alt="Course">
+                        <h4>Complete Web Development Bootcamp</h4>
+                        <p>Instructor: Angela Yu</p>
+                        <div class="progress-bar"><div class="progress" style="width:80%"></div></div>
+                        <span>80% complete</span>
+                    </div>
+                    <div class="course-card">
+                        <img src="Images/CourseCard Imgs/download (2).jpg" alt="Course">
+                        <h4>Python for Data Science</h4>
+                        <p>Instructor: Jose Portilla</p>
+                        <div class="progress-bar"><div class="progress" style="width:55%"></div></div>
+                        <span>55% complete</span>
+                    </div>
+                    <div class="course-card">
+                        <img src="Images/CourseCard Imgs/download (3).jpg" alt="Course">
+                        <h4>React - The Complete Guide</h4>
+                        <p>Instructor: Maximilian Schwarzmüller</p>
+                        <div class="progress-bar"><div class="progress" style="width:30%"></div></div>
+                        <span>30% complete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div>
+    <!-- Modal: Teachers -->
+    <div class="modal-overlay" id="teachersModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Teachers</h2>
+                <button class="modal-close" id="closeTeachersModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="teachers-list">
+                    <div class="teacher-card">
+                        <img src="Images/CourseCard Imgs/download (4).jpg" alt="Teacher">
+                        <div class="teacher-info">
+                            <h4>Dr. Maria Santos</h4>
+                            <p>Mathematics & Physics</p>
+                        </div>
+                        <a href="MentorPage.html" class="btn-view-profile">View Profile</a>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="Images/CourseCard Imgs/download (5).jpg" alt="Teacher">
+                        <div class="teacher-info">
+                            <h4>Prof. James Clear</h4>
+                            <p>Business & Marketing</p>
+                        </div>
+                        <a href="MentorPage.html" class="btn-view-profile">View Profile</a>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="Images/CourseCard Imgs/download (6).jpg" alt="Teacher">
+                        <div class="teacher-info">
+                            <h4>Dr. Emily Chen</h4>
+                            <p>AI & Machine Learning</p>
+                        </div>
+                        <a href="MentorPage.html" class="btn-view-profile">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<script src="ProfilePages.js"></script>
+    <script src="ProfilePages.js"></script>
 </body>
 </html>
