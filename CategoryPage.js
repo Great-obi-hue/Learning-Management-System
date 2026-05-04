@@ -61,6 +61,7 @@ const coursesGrid = document.getElementById("coursesGrid");
 const mentorsGrid = document.getElementById("mentorsGrid");
 const carouselTrack = document.getElementById("carouselTrackCustom");
 const sortSelect = document.getElementById("sortCourses");
+const searchInput = document.querySelector('.search-container input');
 
 function generateStars(rating) {
     let stars = "";
@@ -232,6 +233,31 @@ function createCarouselCard(course) {
             </div>
         </div>
     `;
+}
+
+// ========== SEARCH FUNCTIONALITY ==========
+function filterCoursesBySearch() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    
+    if (searchTerm === "") {
+        // If search is empty, show all courses (original order)
+        currentSortedCourses = [...courses];
+    } else {
+        // Filter courses by title or author
+        currentSortedCourses = courses.filter(course => 
+            course.title.toLowerCase().includes(searchTerm) ||
+            course.author.toLowerCase().includes(searchTerm)
+        );
+    }
+    
+    // Reset to page 1 and re-render
+    currentPage = 1;
+    renderCurrentPage();
+}
+
+// Add event listener for search input
+if (searchInput) {
+    searchInput.addEventListener('input', filterCoursesBySearch);
 }
 
 // ========== NUMBERED PAGINATION ==========
