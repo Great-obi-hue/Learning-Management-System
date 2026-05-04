@@ -4,185 +4,201 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile | Byway</title>
-    <link rel="stylesheet" href="ProfilePages.css">
-    <!-- Font Awesome 6 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ProfilePages.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header (same as Dashboard) -->
     <header class="header">
         <div class="header-container">
-            <a href="HomeScreen.html" class="logo">
-                <img src="Images/Byway logo.png" alt="Byway Logo" class="logo-img">
+            <a href="Dashboard.html" class="logo">
+                <img src="Images/Byway logo.png" alt="Byway Logo">
                 <span class="logo-text">Byway</span>
             </a>
             <nav class="main-nav">
-                <a href="HomeScreen.html">Home</a>
+                <a href="Dashboard.html">Home</a>
                 <a href="CategoryPage.html">Courses</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
             </nav>
             <div class="header-actions">
-                <!-- Cart Icon -->
                 <a href="ShoppingCart.html" class="cart-icon">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge">3</span>
                 </a>
-                <!-- Profile Icon (active / logged in) -->
                 <div class="profile-icon-wrapper">
                     <button class="profile-icon-btn" id="profileIconBtn">
                         <img src="Images/Instructor image.png" alt="User Avatar" class="user-avatar-small">
                     </button>
                     <div class="profile-dropdown" id="profileDropdown">
-                        <a href="ProfilePages.html" class="dropdown-item active">My Profile</a>
-                        <a href="OrderComplete.html" class="dropdown-item">My Orders</a>
-                        <a href="#" class="dropdown-item logout">Logout</a>
+                        <a href="Dashboard.html" class="dropdown-item"><i class="fas fa-home"></i> Dashboard</a>
+                        <a href="OrderComplete.html" class="dropdown-item"><i class="fas fa-clipboard-list"></i> My Orders</a>
+                        <button class="dropdown-item logout" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content: Sidebar + Profile Area -->
     <div class="profile-container">
         <!-- Sidebar -->
         <aside class="profile-sidebar">
             <ul class="sidebar-menu">
-                <li class="sidebar-item active" data-page="profile">
-                    <i class="fas fa-user-circle"></i> My Profile
-                </li>
-                <li class="sidebar-item" data-page="courses">
-                    <i class="fas fa-book"></i> My Courses
-                </li>
-                <li class="sidebar-item" data-page="teachers">
-                    <i class="fas fa-chalkboard-teacher"></i> Teachers
-                </li>
+                <li class="sidebar-item active" data-page="profile"><i class="fas fa-user-circle"></i> My Profile</li>
+                <li class="sidebar-item" data-page="courses"><i class="fas fa-book"></i> My Courses</li>
+                <li class="sidebar-item" data-page="teachers"><i class="fas fa-chalkboard-teacher"></i> Teachers</li>
+                <li class="sidebar-item" data-page="message"><i class="fas fa-envelope"></i> Message</li>
+                <li class="sidebar-item" data-page="reviews"><i class="fas fa-star"></i> My Reviews</li>
             </ul>
         </aside>
 
-        <!-- Main Profile Content -->
+        <!-- Main Content: Profile Edit Form -->
         <main class="profile-main" id="profileMain">
-            <!-- My Profile Section (default visible) -->
             <section class="profile-section active" id="profileSection">
-                <div class="profile-card">
-                    <div class="profile-picture-container">
-                        <img src="Images/Instructor image.png" alt="John Doe" class="profile-picture">
-                        <button class="change-photo-btn"><i class="fas fa-camera"></i></button>
-                    </div>
-                    <div class="profile-details">
-                        <h1 class="profile-name">John Doe</h1>
-                        <div class="detail-row">
-                            <i class="fas fa-envelope"></i>
-                            <span>john.doe@example.com</span>
-                        </div>
-                        <div class="detail-row">
-                            <i class="fas fa-phone"></i>
-                            <span>+1 (123) 456-7890</span>
-                        </div>
-                        <div class="detail-row">
-                            <i class="fas fa-globe"></i>
-                            <span>www.example.com</span>
-                        </div>
-                        <div class="about-section">
-                            <h3>About</h3>
-                            <p>I am a developer and I love to code. I have been coding for over 10 years and I have worked on many projects.</p>
-                        </div>
-                        <div class="skills-section">
-                            <h3>Skills</h3>
-                            <div class="skills-cloud">
-                                <span class="skill-tag">HTML</span>
-                                <span class="skill-tag">CSS</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">React</span>
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">MongoDB</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">AWS</span>
-                                <span class="skill-tag">Agile</span>
+                <div class="profile-edit-card">
+                    <h2>Profile Information</h2>
+                    <p>Update your personal details and profile settings</p>
+
+                    <form id="profileForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" id="firstName" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" id="lastName" placeholder="Last Name">
                             </div>
                         </div>
-                    </div>
+
+                        <div class="form-group">
+                            <label>Headline</label>
+                            <input type="text" id="headline" placeholder="Your professional headline">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea id="description" rows="4" placeholder="Tell us about yourself..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Language</label>
+                            <select id="language">
+                                <option value="">Select Language</option>
+                                <option value="English">English</option>
+                                <option value="Spanish">Spanish</option>
+                                <option value="French">French</option>
+                                <option value="German">German</option>
+                                <option value="Portuguese">Portuguese</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group image-upload-group">
+                            <label>Profile Picture</label>
+                            <div class="image-upload-container">
+                                <div class="image-preview-box" id="imagePreviewBox">
+                                    <img id="profilePicPreview" src="" alt="Profile Preview" style="display: none;">
+                                    <div class="placeholder-avatar" id="placeholderAvatar">JD</div>
+                                </div>
+                                <button type="button" class="btn-change-image" id="changeImageBtn">
+                                    <i class="fas fa-camera"></i> Change Photo
+                                </button>
+                                <input type="file" id="imageUpload" accept="image/*" hidden>
+                            </div>
+                        </div>
+
+                        <div class="links-section">
+                            <h3>Links</h3>
+                            <div class="form-group">
+                                <label><i class="fas fa-globe"></i> Website</label>
+                                <input type="url" id="website" placeholder="https://yourwebsite.com">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-x-twitter"></i> X / Twitter</label>
+                                <input type="url" id="twitter" placeholder="https://twitter.com/username">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-linkedin"></i> LinkedIn</label>
+                                <input type="url" id="linkedin" placeholder="https://linkedin.com/in/username">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-youtube"></i> YouTube</label>
+                                <input type="url" id="youtube" placeholder="https://youtube.com/@channel">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-facebook"></i> Facebook</label>
+                                <input type="url" id="facebook" placeholder="https://facebook.com/username">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-save-profile">Save Changes</button>
+                    </form>
                 </div>
             </section>
-
-            <!-- Inline fallback (hidden, sidebar switches) – not used, modals instead -->
         </main>
     </div>
 
-    <!-- ==================== MODALS ==================== -->
+    <!-- ========== MODALS ========== -->
 
-    <!-- Modal: My Courses -->
+    <!-- Courses Modal -->
     <div class="modal-overlay" id="coursesModal">
         <div class="modal-container">
             <div class="modal-header">
-                <h2>My Courses</h2>
-                <button class="modal-close" id="closeCoursesModal">&times;</button>
+                <h2>All Courses</h2>
+                <button class="modal-close" data-close="coursesModal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="courses-grid">
-                    <div class="course-card">
-                        <img src="Images/CourseCard Imgs/download (1).jpg" alt="Course">
-                        <h4>Complete Web Development Bootcamp</h4>
-                        <p>Instructor: Angela Yu</p>
-                        <div class="progress-bar"><div class="progress" style="width:80%"></div></div>
-                        <span>80% complete</span>
-                    </div>
-                    <div class="course-card">
-                        <img src="Images/CourseCard Imgs/download (2).jpg" alt="Course">
-                        <h4>Python for Data Science</h4>
-                        <p>Instructor: Jose Portilla</p>
-                        <div class="progress-bar"><div class="progress" style="width:55%"></div></div>
-                        <span>55% complete</span>
-                    </div>
-                    <div class="course-card">
-                        <img src="Images/CourseCard Imgs/download (3).jpg" alt="Course">
-                        <h4>React - The Complete Guide</h4>
-                        <p>Instructor: Maximilian Schwarzmüller</p>
-                        <div class="progress-bar"><div class="progress" style="width:30%"></div></div>
-                        <span>30% complete</span>
+                <div class="courses-grid" id="allCoursesGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teachers Modal -->
+    <div class="modal-overlay" id="teachersModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Teachers</h2>
+                <button class="modal-close" data-close="teachersModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="teachers-list" id="teachersList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Modal -->
+    <div class="modal-overlay" id="messageModal">
+        <div class="modal-container message-container">
+            <div class="modal-header">
+                <h2>Messages</h2>
+                <button class="modal-close" data-close="messageModal">&times;</button>
+            </div>
+            <div class="message-layout">
+                <div class="contact-list" id="contactList"></div>
+                <div class="chat-area" id="chatArea">
+                    <div class="chat-placeholder">Select a conversation to start messaging</div>
+                    <div class="chat-messages" id="chatMessages"></div>
+                    <div class="chat-input-row" id="chatInputRow" style="display: none;">
+                        <input type="text" id="messageInput" placeholder="Type your message...">
+                        <button id="sendMessageBtn"><i class="fas fa-paper-plane"></i></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal: Teachers -->
-    <div class="modal-overlay" id="teachersModal">
+    <!-- Reviews Modal -->
+    <div class="modal-overlay" id="reviewsModal">
         <div class="modal-container">
             <div class="modal-header">
-                <h2>Teachers</h2>
-                <button class="modal-close" id="closeTeachersModal">&times;</button>
+                <h2>My Reviews</h2>
+                <button class="modal-close" data-close="reviewsModal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="teachers-list">
-                    <div class="teacher-card">
-                        <img src="Images/CourseCard Imgs/download (4).jpg" alt="Teacher">
-                        <div class="teacher-info">
-                            <h4>Dr. Maria Santos</h4>
-                            <p>Mathematics & Physics</p>
-                        </div>
-                        <a href="MentorPage.html" class="btn-view-profile">View Profile</a>
-                    </div>
-                    <div class="teacher-card">
-                        <img src="Images/CourseCard Imgs/download (5).jpg" alt="Teacher">
-                        <div class="teacher-info">
-                            <h4>Prof. James Clear</h4>
-                            <p>Business & Marketing</p>
-                        </div>
-                        <a href="MentorPage.html" class="btn-view-profile">View Profile</a>
-                    </div>
-                    <div class="teacher-card">
-                        <img src="Images/CourseCard Imgs/download (6).jpg" alt="Teacher">
-                        <div class="teacher-info">
-                            <h4>Dr. Emily Chen</h4>
-                            <p>AI & Machine Learning</p>
-                        </div>
-                        <a href="MentorPage.html" class="btn-view-profile">View Profile</a>
-                    </div>
-                </div>
+                <div class="reviews-list" id="reviewsList"></div>
             </div>
         </div>
     </div>
