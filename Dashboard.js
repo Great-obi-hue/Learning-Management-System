@@ -4,6 +4,14 @@ if (!savedUser) {
     window.location.href = "HomeScreen.html";
 }
 
+// Update cart badge
+function updateCartBadge() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const badge = document.getElementById('cartBadge');
+    if (badge) badge.textContent = cart.length;
+}
+updateCartBadge();
+
 // ==================== DISPLAY USERNAME ====================
 const userGreeting = document.getElementById("userGreeting");
 if (userGreeting && savedUser) {
