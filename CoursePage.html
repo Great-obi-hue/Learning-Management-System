@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart | Byway</title>
+    <title>All Courses | Byway</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="ShoppingCart.css">
+    <link rel="stylesheet" href="CoursePage.css">
 </head>
 <body>
-    <!-- Header (same) -->
+    <!-- Header (consistent with Dashboard) -->
     <header class="header">
         <div class="header-container">
             <a href="Dashboard.html" class="logo">
@@ -20,12 +20,12 @@
             </a>
             <nav class="main-nav">
                 <a href="Dashboard.html">Home</a>
-                <a href="CoursePage.html">Courses</a>
+                <a href="CoursePage.html" class="active">Courses</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
             </nav>
             <div class="header-actions">
-                <a href="ShoppingCart.html" class="cart-icon active">
+                <a href="ShoppingCart.html" class="cart-icon">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge" id="cartBadge">0</span>
                 </a>
@@ -43,20 +43,14 @@
         </div>
     </header>
 
-    <main class="cart-page">
+    <!-- Main Content -->
+    <main class="courses-page">
         <div class="container">
-            <h1>Shopping Cart</h1>
-            <div id="cartItems" class="cart-items"></div>
-            <div class="cart-summary" id="cartSummary">
-                <div class="total-row">
-                    <span>Total:</span>
-                    <span id="totalPrice">$0.00</span>
-                </div>
-                <button id="checkoutBtn" class="checkout-btn">Proceed to Checkout</button>
-            </div>
+            <h1>All Courses</h1>
+            <div class="courses-grid" id="coursesGrid"></div>
         </div>
     </main>
 
-    <script src="ShoppingCart.js"></script>
+    <script src="CoursePage.js"></script>
 </body>
 </html>
