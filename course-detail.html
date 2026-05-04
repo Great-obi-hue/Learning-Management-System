@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Introduction to UX Design – Byway</title>
+  <link rel="stylesheet" href="../courses.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR (injected by JS) -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- BREADCRUMB -->
+  <div class="cd-breadcrumb" style="padding: 14px var(--pad); max-width: calc(var(--max-w) + var(--pad)*2); margin: 0 auto;">
+    <a href="#">Home</a><span style="color:var(--border)">›</span>
+    <a href="#">Categories</a><span style="color:var(--border)">›</span>
+    <span class="active">Introduction to User Experience Design</span>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="cd-layout">
+
+    <!-- ── LEFT COLUMN ── -->
+    <main>
+
+      <!-- Course Header -->
+      <div class="cd-header">
+        <h1 class="cd-title">Introduction to User Experience Design</h1>
+        <p class="cd-desc">This course is meticulously crafted to provide you with a foundational understanding of the principles, methodologies, and tools that drive exceptional user experiences in the digital landscape.</p>
+
+        <div class="cd-meta-row">
+          <span class="cd-rating-num">4.8</span>
+          <span class="stars">★★★★★</span>
+          <span class="cd-rating-count">(651,651 ratings)</span>
+          <span class="cd-dot">·</span>
+          <span>22 Total Hours. 155 Lectures. All levels</span>
+        </div>
+
+        <div class="cd-author-row">
+          <div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--brand),#FF9F7E);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;flex-shrink:0">R</div>
+          <span>Created by</span>
+          <a href="#" class="cd-author-link">Ronald Richards</a>
+          <span class="cd-dot">·</span>
+          <span>🌐 English, Spanish, Italian, German</span>
+        </div>
+      </div>
+
+      <!-- TABS -->
+      <div class="cd-tabs">
+        <div class="cd-tab active" data-target="#panel-desc">Description</div>
+        <div class="cd-tab" data-target="#panel-instructor">Instructor</div>
+        <div class="cd-tab" data-target="#panel-syllabus">Syllabus</div>
+        <div class="cd-tab" data-target="#panel-reviews">Reviews</div>
+      </div>
+
+      <!-- TAB: Description -->
+      <div class="cd-panel active" id="panel-desc">
+        <div class="cd-section">
+          <h2 class="cd-section-title">Course Description</h2>
+          <p class="cd-body">This interactive e-learning course will introduce you to User Experience (UX) design, the art of creating products and services that are intuitive, enjoyable, and user-friendly. Gain a solid foundation in UX principles and learn to apply them in real-world scenarios through engaging modules and interactive exercises.</p>
+          <div class="cd-read-more-wrap" id="readMoreWrap">
+            <p class="cd-body" style="margin-top:12px">Whether you are a complete beginner or a professional looking to pivot into UX, this course equips you with industry-standard tools and frameworks. You'll conduct real user research, build wireframes, and iterate on designs based on real feedback — leaving with a portfolio-worthy project.</p>
+          </div>
+          <button class="cd-read-more-btn" id="readMoreBtn">Show more ▾</button>
+        </div>
+
+        <div class="cd-section">
+          <h2 class="cd-section-title">Certification</h2>
+          <p class="cd-body">At Byway, we understand the significance of formal recognition for your hard work and dedication to continuous learning. Upon successful completion of our courses, you will earn a prestigious certification that not only validates your expertise but also opens doors to new opportunities in your chosen field.</p>
+        </div>
+      </div>
+
+      <!-- TAB: Instructor -->
+      <div class="cd-panel" id="panel-instructor">
+        <div class="cd-section">
+          <h2 class="cd-section-title">Instructor</h2>
+          <div class="cd-instructor-card">
+            <div class="cd-instructor-avatar">R</div>
+            <div>
+              <p class="cd-instructor-name">Ronald Richards</p>
+              <p class="cd-instructor-role">UI/UX Designer</p>
+              <div class="cd-instructor-stats">
+                <span class="cd-stat">⭐ 40,445 Reviews</span>
+                <span class="cd-stat">👥 500 Students</span>
+                <span class="cd-stat">🎓 15 Courses</span>
+              </div>
+              <p class="cd-instructor-bio">With over a decade of industry experience, Ronald brings a wealth of practical knowledge to the classroom. He has played a pivotal role in designing user-centric interfaces for renowned tech companies, ensuring seamless and engaging user experiences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Syllabus -->
+      <div class="cd-panel" id="panel-syllabus">
+        <div class="cd-section">
+          <h2 class="cd-section-title">Syllabus</h2>
+
+          <div class="syl-item" data-default="true">
+            <div class="syl-header">
+              <div class="syl-left">
+                <span class="syl-icon">▸</span>
+                <span class="syl-title-text">Introduction to UX Design</span>
+              </div>
+              <span class="syl-meta-text">5 Lessons · 1 hour</span>
+            </div>
+            <div class="syl-body">
+              <div class="syl-lesson"><span>▶</span> What is UX Design? <span class="syl-lesson-dur">08:24</span></div>
+              <div class="syl-lesson"><span>▶</span> The UX Design Process <span class="syl-lesson-dur">12:10</span></div>
+              <div class="syl-lesson"><span>▶</span> Tools of the Trade <span class="syl-lesson-dur">09:55</span></div>
+              <div class="syl-lesson"><span>📄</span> Lesson Resources <span class="syl-lesson-dur">Article</span></div>
+              <div class="syl-lesson"><span>📝</span> Module 1 Quiz <span class="syl-lesson-dur">5 questions</span></div>
+            </div>
+          </div>
+
+          <div class="syl-item">
+            <div class="syl-header">
+              <div class="syl-left"><span class="syl-icon">▸</span><span class="syl-title-text">Basics of User-Centered Design</span></div>
+              <span class="syl-meta-text">5 Lessons · 1 hour</span>
+            </div>
+            <div class="syl-body">
+              <div class="syl-lesson"><span>▶</span> Understanding Your Users <span class="syl-lesson-dur">10:15</span></div>
+              <div class="syl-lesson"><span>▶</span> Personas & Journey Maps <span class="syl-lesson-dur">14:30</span></div>
+            </div>
+          </div>
+
+          <div class="syl-item">
+            <div class="syl-header">
+              <div class="syl-left"><span class="syl-icon">▸</span><span class="syl-title-text">Elements of User Experience</span></div>
+              <span class="syl-meta-text">5 Lessons · 1 hour</span>
+            </div>
+            <div class="syl-body">
+              <div class="syl-lesson"><span>▶</span> Information Architecture <span class="syl-lesson-dur">11:20</span></div>
+              <div class="syl-lesson"><span>▶</span> Wireframing Basics <span class="syl-lesson-dur">13:05</span></div>
+            </div>
+          </div>
+
+          <div class="syl-item">
+            <div class="syl-header">
+              <div class="syl-left"><span class="syl-icon">▸</span><span class="syl-title-text">Visual Design Principles</span></div>
+              <span class="syl-meta-text">5 Lessons · 1 hour</span>
+            </div>
+            <div class="syl-body">
+              <div class="syl-lesson"><span>▶</span> Color Theory & Typography <span class="syl-lesson-dur">09:40</span></div>
+              <div class="syl-lesson"><span>▶</span> Layout & Composition <span class="syl-lesson-dur">12:55</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB: Reviews -->
+      <div class="cd-panel" id="panel-reviews">
+        <div class="cd-section">
+          <h2 class="cd-section-title">Learner Reviews</h2>
+
+          <div class="reviews-layout">
+            <div class="reviews-big">
+              <div class="reviews-big-num">4.6</div>
+              <div class="stars">★★★★☆</div>
+              <p class="reviews-big-label">146,951 reviews</p>
+            </div>
+            <div class="reviews-bars">
+              <div class="bar-row"><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><span class="bar-pct">80%</span></div>
+              <div class="bar-row"><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div><span class="bar-pct">10%</span></div>
+              <div class="bar-row"><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div><span class="bar-pct">5%</span></div>
+              <div class="bar-row"><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div><span class="bar-pct">3%</span></div>
+              <div class="bar-row"><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div><span class="bar-pct">2%</span></div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-avatar">M</div>
+            <div>
+              <p class="review-name">Mark Doe</p>
+              <div class="stars" style="font-size:13px;margin-bottom:4px">★★★★★</div>
+              <p class="review-date">Reviewed on 22nd March, 2024</p>
+              <p class="review-text">I was initially apprehensive, having no prior design experience. But the instructor did an amazing job of breaking down complex concepts into easily digestible modules. The video lectures were engaging, and the real-world examples really helped solidify my understanding.</p>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-avatar" style="background:linear-gradient(135deg,#6366F1,#A5B4FC)">S</div>
+            <div>
+              <p class="review-name">Sarah K.</p>
+              <div class="stars" style="font-size:13px;margin-bottom:4px">★★★★★</div>
+              <p class="review-date">Reviewed on 10th March, 2024</p>
+              <p class="review-text">Absolutely loved this course! The syllabus was well-structured and the instructor explained everything with clarity. I now feel confident applying for junior UX roles. Highly recommend to anyone starting out.</p>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-avatar" style="background:linear-gradient(135deg,#10B981,#6EE7B7)">A</div>
+            <div>
+              <p class="review-name">Mark Doe</p>
+              <div class="stars" style="font-size:13px;margin-bottom:4px">★★★★★</div>
+              <p class="review-date">Reviewed on 22nd March, 2024</p>
+              <p class="review-text">I was initially apprehensive, having no prior design experience. But the instructor did an amazing job of breaking down complex concepts into easily digestible modules. The real-world examples really helped solidify my understanding.</p>
+            </div>
+          </div>
+
+          <button class="btn btn-outline btn-full" style="margin-top:20px">View more Reviews</button>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ── RIGHT COLUMN: Purchase Card ── -->
+    <aside>
+      <div class="purchase-card">
+        <div class="purchase-card__thumb">
+          <div style="width:56px;height:56px;background:rgba(255,102,54,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid rgba(255,255,255,.3)">
+            <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p class="purchase-thumb-text">Preview this course</p>
+        </div>
+        <div class="purchase-card__body">
+          <div class="purchase-price-row">
+            <span class="purchase-price">$49.5</span>
+            <span class="purchase-price-old">$99.0</span>
+            <span class="purchase-badge">50% Off</span>
+          </div>
+          <button class="btn btn-primary btn-full mb-sm" id="addToCartBtn">Add To Cart</button>
+          <button class="btn btn-brand btn-full" id="buyNowBtn">Buy Now</button>
+          <p class="purchase-guarantee">30-Day Money-Back Guarantee</p>
+          <div class="purchase-includes">
+            <p class="purchase-includes-title">This course includes:</p>
+            <ul>
+              <li><span>🎬</span> 22 hours on-demand video</li>
+              <li><span>📄</span> 15 downloadable resources</li>
+              <li><span>📱</span> Access on mobile &amp; desktop</li>
+              <li><span>🏆</span> Certificate of completion</li>
+              <li><span>♾️</span> Full lifetime access</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- end cd-layout -->
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="testimonials-inner">
+      <h2 class="testimonials-title">What Our Customers Say About Us</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Byway's tech courses are top-notch! As someone who's always looking to stay ahead in the rapidly evolving tech world, I appreciate the up-to-date content and engaging multimedia.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div><p class="testimonial-name">Jane Doe</p><p class="testimonial-role">Designer</p></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Byway's tech courses are top-notch! As someone who's always looking to stay ahead in the rapidly evolving tech world, I appreciate the up-to-date content and engaging multimedia.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div><p class="testimonial-name">Jane Doe</p><p class="testimonial-role">Designer</p></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Byway's tech courses are top-notch! As someone who's always looking to stay ahead in the rapidly evolving tech world, I appreciate the up-to-date content and engaging multimedia.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div><p class="testimonial-name">Jane Doe</p><p class="testimonial-role">Designer</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE COURSES -->
+  <section class="more-courses-section">
+    <div class="more-courses-inner">
+      <h2 class="more-courses-title">More Courses Like This</h2>
+      <div class="more-courses-grid">
+        <div class="course-card"><div class="course-card__thumb">🎨</div><div class="course-card__body"><p class="course-card__title">Beginner's Guide to Design</p><p class="course-card__author">By Ronald Richards</p><div class="stars" style="font-size:12px;margin-bottom:4px">★★★★★</div><p class="course-card__meta">22 Total Hours. 155 Lectures. Beginner</p><p class="course-card__price">$149.9</p></div></div>
+        <div class="course-card"><div class="course-card__thumb">🖌️</div><div class="course-card__body"><p class="course-card__title">Beginner's Guide to Design</p><p class="course-card__author">By Ronald Richards</p><div class="stars" style="font-size:12px;margin-bottom:4px">★★★★★</div><p class="course-card__meta">22 Total Hours. 155 Lectures. Beginner</p><p class="course-card__price">$149.9</p></div></div>
+        <div class="course-card"><div class="course-card__thumb">💡</div><div class="course-card__body"><p class="course-card__title">Beginner's Guide to Design</p><p class="course-card__author">By Ronald Richards</p><div class="stars" style="font-size:12px;margin-bottom:4px">★★★★★</div><p class="course-card__meta">22 Total Hours. 155 Lectures. Beginner</p><p class="course-card__price">$149.9</p></div></div>
+        <div class="course-card"><div class="course-card__thumb">✏️</div><div class="course-card__body"><p class="course-card__title">Beginner's Guide to Design</p><p class="course-card__author">By Ronald Richards</p><div class="stars" style="font-size:12px;margin-bottom:4px">★★★★★</div><p class="course-card__meta">22 Total Hours. 155 Lectures. Beginner</p><p class="course-card__price">$149.9</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (injected by JS) -->
+  <div id="footer-placeholder"></div>
+
+  <script src="../courses.js"></script>
+</body>
+</html>

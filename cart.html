@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart – Byway</title>
+  <link rel="stylesheet" href="../courses.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Shopping Cart</h1>
+    <div class="page-breadcrumb">
+      <a href="course-detail.html">Categories</a>
+      <span class="bc-sep">›</span>
+      <a href="course-detail.html">Details</a>
+      <span class="bc-sep">›</span>
+      <span class="bc-active">Shopping Cart</span>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="two-col-layout">
+
+    <!-- LEFT: Cart Items -->
+    <main>
+      <span class="cart-count-label" id="cartItemCount">0 Courses in cart</span>
+      <div class="cart-list" id="cartList">
+        <!-- Rendered by JS -->
+        <div style="padding:40px 0;text-align:center;color:var(--muted)">
+          <div style="font-size:40px;margin-bottom:12px">⏳</div>
+          <p>Loading your cart...</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- RIGHT: Order Summary -->
+    <aside>
+      <div class="order-sidebar">
+        <h2 class="order-sidebar__title">Order Details</h2>
+        <div class="order-summary-rows">
+          <div class="summary-row">
+            <span>Price</span>
+            <span id="summaryPrice">$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Discount</span>
+            <span class="discount" id="summaryDiscount">-$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Tax</span>
+            <span id="summaryTax">$0.00</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="summaryTotal">$0.00</span>
+          </div>
+        </div>
+        <div class="sidebar-cta">
+          <button class="btn btn-primary btn-full" id="checkoutBtn">
+            Proceed to Checkout
+          </button>
+          <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:10px">
+            🔒 Secure checkout guaranteed
+          </p>
+        </div>
+      </div>
+
+      <!-- Promo -->
+      <div style="background:var(--brand-light);border:1px solid rgba(255,102,54,.2);border-radius:var(--radius-lg);padding:16px;margin-top:16px">
+        <p style="font-size:13px;font-weight:700;color:var(--brand);margin-bottom:4px">🎉 You're saving $10.00!</p>
+        <p style="font-size:12px;color:var(--text)">A discount has been automatically applied to your order.</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="../courses.js"></script>
+</body>
+</html>
