@@ -36,22 +36,54 @@ modal.addEventListener("click", (e) => {
     }
 });
 
+/* ================= CREATE ACCOUNT BUTTON ================= */
 const createBtn = document.querySelector(".create-btn");
 
 createBtn.addEventListener("click", function () {
-    const link = this.getAttribute("data-link");
 
-    // TOGGLE EFFECT for create button
+    // button effect
     this.classList.toggle("active");
 
-    // safety check (prevents errors if empty)
-    if (link) {
-        window.location.href = link;
-    } else {
-        console.log("No link added yet 🚧");
-    }
-});
+    const signupInputs = document.querySelectorAll("#signupModal input");
 
+    const firstName = signupInputs[0].value.trim();
+    const lastName = signupInputs[1].value.trim();
+    const username = signupInputs[2].value.trim();
+    const email = signupInputs[3].value.trim();
+    const password = signupInputs[4].value.trim();
+    const confirmPassword = signupInputs[5].value.trim();
+
+    if (
+        firstName === "" ||
+        lastName === "" ||
+        username === "" ||
+        email === "" ||
+        password === "" ||
+        confirmPassword === ""
+    ) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+    }
+
+    const userData = {
+        firstName,
+        lastName,
+        username,
+        email,
+        password
+    };
+
+    localStorage.setItem("userData", JSON.stringify(userData));
+
+    alert("Account created successfully!");
+            window.location.href = "HomeScreen.html";
+
+});
 
 const loginModal = document.getElementById("loginModal");
 const pageContentLogin = document.getElementById("pageContent");
@@ -77,22 +109,42 @@ loginModal.addEventListener("click", (e) => {
     }
 });
 
-/* LOGIN BUTTON INSIDE MODAL */
+
+/* ================= LOGIN BUTTON ================= */
 const loginSubmitBtn = document.querySelector(".login-btn");
 
 loginSubmitBtn.addEventListener("click", function () {
-    const link = this.getAttribute("data-link");
 
-    // TOGGLE EFFECT for login button
+    // button effect
     this.classList.toggle("active");
 
-    if (link) {
-        window.location.href = link;
-    } else {
-        console.log("No link added yet 🚧");
-    }
-});
+    const loginInputs = document.querySelectorAll("#loginModal input");
 
+    const emailOrUsername = loginInputs[0].value.trim();
+    const password = loginInputs[1].value.trim();
+
+    const savedUser = JSON.parse(localStorage.getItem("userData"));
+
+    if (!savedUser) {
+        alert("No account found. Please sign up first.");
+        return;
+    }
+
+    const validUser =
+        emailOrUsername === savedUser.email ||
+        emailOrUsername === savedUser.username;
+
+    const validPassword =
+        password === savedUser.password;
+
+    if (validUser && validPassword) {
+        alert("Login successful!");
+        window.location.href = "HomeScreen.html";
+    } else {
+        alert("Invalid login details");
+    }
+
+});
 
 
 const counters = document.querySelectorAll(".count");
