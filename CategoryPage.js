@@ -1,7 +1,7 @@
 // ========== 36 COURSES (9 per page x 4 pages) ==========
 const courses = [
     // Page 1 (Courses 1-9)
-    { id: 1, title: "Beginner's Guide to Design", author: "Ronald Richards", price: 149.9, rating: 5, reviews: 1200, students: "22 Total Hours", lectures: "155 Lectures", level: "Beginner", image: "Images/CategoryPage Imgs/img 1.png", coursePage: "CoursePage.html" },
+    { id: 1, title: "Beginner's Guide to Design", author: "Ronald Richards", price: 149.9, rating: 5, reviews: 1200, students: "22 Total Hours", lectures: "155 Lectures", level: "Beginner", image: "Images/CategoryPage Imgs/img 1.png", coursePage: "OrderComplete.html" },
     { id: 2, title: "UI/UX Design Masterclass", author: "Esther Howard", price: 129.9, rating: 5, reviews: 950, students: "18 Total Hours", lectures: "132 Lectures", level: "Intermediate", image: "Images/CourseCard Imgs/download (1).jpg", coursePage: "#" },
     { id: 3, title: "Advanced Web Design", author: "Cameron Williamson", price: 179.9, rating: 4, reviews: 850, students: "25 Total Hours", lectures: "210 Lectures", level: "Advanced", image: "Images/CourseCard Imgs/download (2).jpg", coursePage: "#" },
     { id: 4, title: "Graphic Design Essentials", author: "Jenny Wilson", price: 99.9, rating: 5, reviews: 1450, students: "15 Total Hours", lectures: "98 Lectures", level: "Beginner", image: "Images/CourseCard Imgs/download (3).jpg", coursePage: "#" },

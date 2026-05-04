@@ -12,6 +12,13 @@ img {
 
 body {
     font-family: 'Inter', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+html{
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* NAVBAR */
