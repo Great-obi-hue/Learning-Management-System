@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Courses | Byway</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CoursePage.css">
+</head>
+<body>
+    <!-- Header (consistent with Dashboard) -->
+    <header class="header">
+        <div class="header-container">
+            <a href="Dashboard.html" class="logo">
+                <img src="Images/Byway logo.png" alt="Byway Logo">
+                <span class="logo-text">Byway</span>
+            </a>
+            <nav class="main-nav">
+                <a href="Dashboard.html">Home</a>
+                <a href="CoursePage.html" class="active">Courses</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="ShoppingCart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a>
+                <div class="profile-icon-wrapper">
+                    <button class="profile-icon-btn" id="profileIconBtn">
+                        <img src="Images/Instructor image.png" alt="User Avatar" class="user-avatar-small">
+                    </button>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <a href="ProfilePages.html" class="dropdown-item"><i class="fas fa-user-circle"></i> My Profile</a>
+                        <a href="OrderComplete.html" class="dropdown-item"><i class="fas fa-clipboard-list"></i> My Orders</a>
+                        <button class="dropdown-item logout" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="courses-page">
+        <div class="container">
+            <h1>All Courses</h1>
+            <div class="courses-grid" id="coursesGrid"></div>
+        </div>
+    </main>
+
+    <script src="CoursePage.js"></script>
+</body>
+</html>
