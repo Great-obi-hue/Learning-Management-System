@@ -1,7 +1,7 @@
 // ========== 36 COURSES (9 per page x 4 pages) ==========
 const courses = [
     // Page 1 (Courses 1-9)
-    { id: 1, title: "Beginner's Guide to Design", author: "Ronald Richards", price: 149.9, rating: 5, reviews: 1200, students: "22 Total Hours", lectures: "155 Lectures", level: "Beginner", image: "Images/CategoryPage Imgs/img 1.png", coursePage: "OrderComplete.html" },
+    { id: 1, title: "Beginner's Guide to Design", author: "Ronald Richards", price: 149.9, rating: 5, reviews: 1200, students: "22 Total Hours", lectures: "155 Lectures", level: "Beginner", image: "Images/CategoryPage Imgs/img 1.png", coursePage: "course-detail.html" },
     { id: 2, title: "UI/UX Design Masterclass", author: "Esther Howard", price: 129.9, rating: 5, reviews: 950, students: "18 Total Hours", lectures: "132 Lectures", level: "Intermediate", image: "Images/CourseCard Imgs/download (1).jpg", coursePage: "#" },
     { id: 3, title: "Advanced Web Design", author: "Cameron Williamson", price: 179.9, rating: 4, reviews: 850, students: "25 Total Hours", lectures: "210 Lectures", level: "Advanced", image: "Images/CourseCard Imgs/download (2).jpg", coursePage: "#" },
     { id: 4, title: "Graphic Design Essentials", author: "Jenny Wilson", price: 99.9, rating: 5, reviews: 1450, students: "15 Total Hours", lectures: "98 Lectures", level: "Beginner", image: "Images/CourseCard Imgs/download (3).jpg", coursePage: "#" },
@@ -61,6 +61,7 @@ const coursesGrid = document.getElementById("coursesGrid");
 const mentorsGrid = document.getElementById("mentorsGrid");
 const carouselTrack = document.getElementById("carouselTrackCustom");
 const sortSelect = document.getElementById("sortCourses");
+const searchInput = document.querySelector('.search-container input');
 
 function generateStars(rating) {
     let stars = "";
@@ -232,6 +233,31 @@ function createCarouselCard(course) {
             </div>
         </div>
     `;
+}
+
+// ========== SEARCH FUNCTIONALITY ==========
+function filterCoursesBySearch() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    
+    if (searchTerm === "") {
+        // If search is empty, show all courses (original order)
+        currentSortedCourses = [...courses];
+    } else {
+        // Filter courses by title or author
+        currentSortedCourses = courses.filter(course => 
+            course.title.toLowerCase().includes(searchTerm) ||
+            course.author.toLowerCase().includes(searchTerm)
+        );
+    }
+    
+    // Reset to page 1 and re-render
+    currentPage = 1;
+    renderCurrentPage();
+}
+
+// Add event listener for search input
+if (searchInput) {
+    searchInput.addEventListener('input', filterCoursesBySearch);
 }
 
 // ========== NUMBERED PAGINATION ==========

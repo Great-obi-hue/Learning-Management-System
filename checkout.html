@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout – Byway</title>
+  <link rel="stylesheet" href="../courses.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Checkout Page</h1>
+    <div class="page-breadcrumb">
+      <a href="course-detail.html">Details</a>
+      <span class="bc-sep">›</span>
+      <a href="cart.html">Shopping Cart</a>
+      <span class="bc-sep">›</span>
+      <span class="bc-active">Checkout</span>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="two-col-layout">
+
+    <!-- LEFT: Checkout Form -->
+    <main>
+      <form class="checkout-form-card" id="checkoutForm" novalidate>
+
+        <!-- Location -->
+        <h3 class="form-section-title">Billing Information</h3>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="country">Country</label>
+            <input class="form-input" id="country" type="text" placeholder="Enter Country" required/>
+            <p class="form-error" id="countryError">Please enter your country</p>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="state">State / Union Territory</label>
+            <input class="form-input" id="state" type="text" placeholder="Enter State" required/>
+            <p class="form-error" id="stateError">Please enter your state</p>
+          </div>
+        </div>
+
+        <div style="height:1px;background:var(--border);margin:8px 0 24px"></div>
+
+        <!-- Payment Method -->
+        <h3 class="form-section-title">Payment Method</h3>
+
+        <div class="payment-methods">
+
+          <!-- Credit / Debit Card -->
+          <div class="payment-option active-option" id="option-card">
+            <div class="payment-option-header">
+              <div class="payment-option-left">
+                <input class="payment-radio" type="radio" name="payment" value="card" id="radio-card" checked/>
+                <label class="payment-label" for="radio-card">Credit / Debit Card</label>
+              </div>
+              <div class="payment-logos">
+                <span class="visa-logo">VISA</span>
+                <div class="mc-logo">
+                  <div class="mc-circle mc-red"></div>
+                  <div class="mc-circle mc-yellow"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="payment-panel active" id="panel-card">
+              <div class="form-group">
+                <label class="form-label" for="cardName">Name of Card</label>
+                <input class="form-input" id="cardName" type="text" placeholder="Name of card" required/>
+                <p class="form-error" id="cardNameError">Please enter the cardholder name</p>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cardNumber">Card Number</label>
+                <input class="form-input" id="cardNumber" type="text" placeholder="1234 5678 9012 3456" maxlength="19" required/>
+                <p class="form-error" id="cardNumberError">Please enter a valid card number</p>
+              </div>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="expiryDate">Expiry Date</label>
+                  <input class="form-input" id="expiryDate" type="text" placeholder="MM/YY" maxlength="5" required/>
+                  <p class="form-error" id="expiryError">Please enter expiry date</p>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cvv">CVC / CVV</label>
+                  <input class="form-input" id="cvv" type="text" placeholder="123" maxlength="4" required/>
+                  <p class="form-error" id="cvvError">Please enter CVV</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PayPal -->
+          <div class="payment-option" id="option-paypal">
+            <div class="payment-option-header">
+              <div class="payment-option-left">
+                <input class="payment-radio" type="radio" name="payment" value="paypal" id="radio-paypal"/>
+                <label class="payment-label" for="radio-paypal">PayPal</label>
+              </div>
+              <div class="paypal-logo">
+                <span>Pay</span><span>Pal</span>
+              </div>
+            </div>
+            <div class="payment-panel" id="panel-paypal">
+              <p style="font-size:14px;color:var(--muted);padding:4px 0 8px">You will be redirected to PayPal to complete your purchase securely.</p>
+            </div>
+          </div>
+
+        </div><!-- end payment-methods -->
+
+        <button class="btn btn-primary btn-full" type="submit" id="submitPaymentBtn" style="margin-top:24px;padding:14px;font-size:15px">
+          Proceed to Checkout
+        </button>
+
+        <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:12px">
+          🔒 Your payment information is encrypted and secure
+        </p>
+
+      </form>
+    </main>
+
+    <!-- RIGHT: Order Summary -->
+    <aside>
+      <div class="order-sidebar">
+        <h2 class="order-sidebar__title">Order Details</h2>
+
+        <!-- Course items -->
+        <div id="checkoutItems">
+          <!-- Rendered by JS -->
+          <div class="co-item">
+            <div class="co-item__thumb">🎨</div>
+            <div class="co-item__info">
+              <span class="co-item__category">Design</span>
+              <p class="co-item__title">Introduction to User Experience Design</p>
+              <p class="co-item__meta">155 Lectures · 22 Total Hours</p>
+              <p class="co-item__price">$45.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coupon -->
+        <div style="padding:0 20px 16px;border-bottom:1px solid var(--border)">
+          <div class="coupon-row">
+            <span class="coupon-icon">🏷️</span>
+            <input class="coupon-input" id="couponInput" type="text" placeholder="APPLY COUPON CODE"/>
+            <button class="coupon-btn" type="button" id="applyCouponBtn">Apply</button>
+          </div>
+        </div>
+
+        <!-- Totals -->
+        <div class="order-summary-rows">
+          <div class="summary-row">
+            <span>Price</span>
+            <span id="summaryPrice">$300.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Discount</span>
+            <span class="discount" id="summaryDiscount">-$10.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Tax</span>
+            <span id="summaryTax">$20.00</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="summaryTotal">$290.00</span>
+          </div>
+        </div>
+
+        <div class="sidebar-cta">
+          <button class="btn btn-primary btn-full" type="button" onclick="document.getElementById('checkoutForm').requestSubmit()">
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="../courses.js"></script>
+</body>
+</html>
